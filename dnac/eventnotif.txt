@@ -1,0 +1,15 @@
+basics:
+  - considered "eastbound"
+  - can push event notifications to third party apps
+  - follows subscriber/publisher design, like dial-in telemetry
+  - user provides a receiving URL (webhook/callback URL)
+  - DNAC sends notifications as HTTP POST requests to the callback URL
+
+gui setup:
+  - under Platform settings, manage bundles
+  - enable "network events for REST API endpoint"
+  - configure the bundle and set the REST endpoint (callback URL)
+  - developer tooklit, integration flows
+  - schedule to publish SWIM events, schedule flow
+  - can schedule frequency
+  - to choose events: platform settings, event settings

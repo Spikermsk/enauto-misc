@@ -10,3 +10,5 @@ gui:
   - can click red box to see error output, just like the shell
 
 api:
+  - need to perform a GET network-device to get UUID
+  - then, POST commands to run on a given UUID

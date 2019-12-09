@@ -1,0 +1,25 @@
+basics:
+  - "project" is a grouping of templates
+  - tool > template editor
+  - adding tags to templates makes them searchable and referable later
+  - regular templates:
+      - supports IOS-XE, IOS-XR, and NX-OS
+      - validation checks for syntax errors or blacklisted commands
+      - often small, perform one action (hostname, ntp, ospf, etc)
+  - composite template:
+      - composition of two or more regular templates
+      - combine small regular template to form a full config
+      - "template editor" lets you sequence the component templates
+  - can "simulate" templates by rendering them with mock data to check
+  - saving a template adds it to a version control system
+  - templates are assigned to profiles
+    1. routing and NFV
+    2. switching: specify devices and device type
+    3. wireless: specify SSIDs
+  - then assign sites?
+  - then "provision" and identify devices from inventory
+  - can be deployed now or scheduled for later
+
+api:
+  - under "Template programmer"
+  - /dna/intent/api/v1/template-programmer

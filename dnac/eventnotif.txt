@@ -13,3 +13,33 @@ gui setup:
   - schedule to publish SWIM events, schedule flow
   - can schedule frequency
   - to choose events: platform settings, event settings
+  - possible test endpoint `https://mylistener.ngrok.io`
+  - username/password required, but maybe not necessary?
+
+api method:
+  - GET/POST `/dna/intent/api/v1/event/subscription` 
+  - model below:
+    [
+      {
+        "subscriptionId": "string",
+        "version": "string",
+        "name": "string",
+        "description": "string",
+        "subscriptionEndpoints": [
+          {
+            "instanceId": "string",
+            "subscriptionDetails": {
+              "name": "string",
+              "url": "string",
+              "method": "string",
+              "connectorType": "string"
+            }
+          }
+        ],
+        "filter": {
+          "eventIds": [
+            "string"
+          ]
+        }
+      }
+    ]

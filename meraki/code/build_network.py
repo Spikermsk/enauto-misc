@@ -4,6 +4,8 @@
 Author: Nick Russo
 Purpose: Using the Cisco Meraki REST API to create/update
 organizations and their networks in the Cisco DevNet sandbox.
+Note that you can use the Enterprise or Small Business sandboxes
+with this script (or a production deployment).
 """
 
 import sys
@@ -66,6 +68,7 @@ def main(org_name, net_name):
         body = json.load(handle)
 
     # Issue the request and print the feedback
+    # TODO consider datadiff or dictdiffer ... current vs intended?
     update_net = req(f"networks/{net_id}", method="put", json=body).json()
     print(f"Current configuration for {net_name}:")
     print(json.dumps(update_net, indent=2))

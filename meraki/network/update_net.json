@@ -1,0 +1,11 @@
+{
+  "timeZone": "America/New_York",
+  "tags": " enauto study ",
+  "type": "combined",
+  "productTypes": [
+    "appliance",
+    "switch",
+    "wireless"
+  ],
+  "disableMyMerakiCom": false
+}

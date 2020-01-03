@@ -15,16 +15,9 @@ def main():
     """
 
     # Create SD-WAN object to DevNet sandbox host
-    sdwan = CiscoSDWAN(
-        # host="sandboxsdwan.cisco.com",
-        host="10.10.20.90",
-        port=8443,
-        # username="devnetuser",
-        username="admin",
-        # password="Cisco123!",
-        password="admin",
-    )
+    sdwan = CiscoSDWAN.get_instance_reserved()
 
+    # Create list of functions (not calling them)
     api_calls = [
         sdwan.get_alarm_count,
         sdwan.get_certificate_summary,

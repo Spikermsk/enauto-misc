@@ -1,0 +1,674 @@
+{
+  "header": {
+    "generatedOn": 1578076062246,
+    "viewKeys": {
+      "uniqueKey": [],
+      "preferenceKey": "grid-AppRouteStatistics"
+    },
+    "columns": [
+      {
+        "title": "Hostname",
+        "property": "vdevice-host-name",
+        "hideable": false,
+        "dataType": "string"
+      },
+      {
+        "title": "Device IP",
+        "property": "vdevice-name",
+        "hideable": false,
+        "dataType": "string"
+      },
+      {
+        "title": "Source IP",
+        "property": "src-ip",
+        "hideable": false,
+        "dataType": "ipv4"
+      },
+      {
+        "title": "Destination IP",
+        "property": "dst-ip",
+        "hideable": false,
+        "dataType": "string"
+      },
+      {
+        "title": "Protocol",
+        "property": "proto",
+        "dataType": "string"
+      },
+      {
+        "title": "Source Port",
+        "property": "src-port",
+        "dataType": "number"
+      },
+      {
+        "title": "Destination Port",
+        "property": "dst-port",
+        "dataType": "string"
+      },
+      {
+        "title": "Remote System Ip",
+        "property": "remote-system-ip",
+        "width": 200,
+        "dataType": "ipv4"
+      },
+      {
+        "title": "Local Color",
+        "property": "local-color",
+        "width": 100,
+        "dataType": "string"
+      },
+      {
+        "title": "Remote Color",
+        "property": "remote-color",
+        "width": 120,
+        "dataType": "string"
+      },
+      {
+        "title": "Mean Loss",
+        "property": "mean-loss",
+        "dataType": "number"
+      },
+      {
+        "title": "Mean Latency",
+        "property": "mean-latency",
+        "width": 120,
+        "dataType": "number"
+      },
+      {
+        "title": "Mean Jitter",
+        "property": "mean-jitter",
+        "width": 120,
+        "dataType": "number"
+      },
+      {
+        "title": "SLA Class Index",
+        "property": "sla-class-index",
+        "dataType": "string"
+      },
+      {
+        "title": "Index",
+        "property": "index",
+        "dataType": "string"
+      },
+      {
+        "title": "Total Packets",
+        "property": "total-packets",
+        "dataType": "string"
+      },
+      {
+        "title": "Loss",
+        "property": "loss",
+        "dataType": "string"
+      },
+      {
+        "title": "Average Latency",
+        "property": "average-latency",
+        "dataType": "string"
+      },
+      {
+        "title": "Average Jitter",
+        "property": "average-jitter",
+        "dataType": "string"
+      },
+      {
+        "title": "Tx Data Pkts",
+        "property": "tx-data-pkts",
+        "dataType": "string"
+      },
+      {
+        "title": "Rx Data Pkts",
+        "property": "rx-data-pkts",
+        "dataType": "string"
+      },
+      {
+        "title": "Last Updated",
+        "property": "lastupdated",
+        "displayFormat": "DD MMM YYYY h:mm:ss A z",
+        "inputFormat": "unix-time",
+        "dataType": "date"
+      }
+    ],
+    "fields": [
+      {
+        "property": "vdevice-host-name",
+        "dataType": "string"
+      },
+      {
+        "property": "vdevice-name",
+        "dataType": "string"
+      },
+      {
+        "property": "src-ip",
+        "dataType": "ipv4"
+      },
+      {
+        "property": "dst-ip",
+        "dataType": "string"
+      },
+      {
+        "property": "proto",
+        "dataType": "string"
+      },
+      {
+        "property": "src-port",
+        "dataType": "number"
+      },
+      {
+        "property": "dst-port",
+        "dataType": "string"
+      },
+      {
+        "property": "remote-system-ip",
+        "dataType": "ipv4"
+      },
+      {
+        "property": "local-color",
+        "dataType": "string"
+      },
+      {
+        "property": "remote-color",
+        "dataType": "string"
+      },
+      {
+        "property": "mean-loss",
+        "dataType": "number"
+      },
+      {
+        "property": "mean-latency",
+        "dataType": "number"
+      },
+      {
+        "property": "mean-jitter",
+        "dataType": "number"
+      },
+      {
+        "property": "sla-class-index",
+        "dataType": "string"
+      },
+      {
+        "property": "index",
+        "dataType": "string"
+      },
+      {
+        "property": "total-packets",
+        "dataType": "string"
+      },
+      {
+        "property": "loss",
+        "dataType": "string"
+      },
+      {
+        "property": "average-latency",
+        "dataType": "string"
+      },
+      {
+        "property": "average-jitter",
+        "dataType": "string"
+      },
+      {
+        "property": "tx-data-pkts",
+        "dataType": "string"
+      },
+      {
+        "property": "rx-data-pkts",
+        "dataType": "string"
+      },
+      {
+        "property": "lastupdated",
+        "dataType": "date"
+      }
+    ]
+  },
+  "data": [
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.60",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "0",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.60",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-0",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062218,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.60",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "1",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.60",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-1",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062218,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.60",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "2",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.60",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-2",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062218,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.60",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "3",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.60",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-3",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062218,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.60",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "4",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.60",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-4",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062218,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.60",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "5",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.60",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-5",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062219,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.64",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "0",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.64",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-0",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062219,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.64",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "1",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.64",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-1",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062219,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.64",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "2",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.64",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-2",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062219,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.64",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "3",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.64",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-3",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062220,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.64",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "4",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.64",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-4",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062220,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.64",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "5",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.64",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-5",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062220,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.65",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "0",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.65",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-0",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062220,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.65",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "1",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.65",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-1",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062221,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.65",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "2",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.65",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-2",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062221,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.65",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "3",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.65",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-3",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062221,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.65",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "4",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.65",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-4",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062221,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    },
+    {
+      "src-ip": "10.10.20.61",
+      "dst-ip": "10.10.20.65",
+      "average-latency": "0",
+      "tx-data-pkts": "0",
+      "vdevice-name": "4.4.4.61",
+      "src-port": 12346,
+      "index": "5",
+      "dst-port": "12346",
+      "remote-color": "default",
+      "remote-system-ip": "4.4.4.65",
+      "sla-class-index": "0",
+      "vdevice-host-name": "vedge-002",
+      "local-color": "default",
+      "mean-latency": 0,
+      "total-packets": "600",
+      "loss": "0",
+      "mean-loss": 0,
+      "vdevice-dataKey": "4.4.4.61-5",
+      "mean-jitter": 0,
+      "proto": "ipsec",
+      "lastupdated": 1578076062222,
+      "average-jitter": "0",
+      "rx-data-pkts": "0"
+    }
+  ]
+}

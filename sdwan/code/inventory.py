@@ -3,7 +3,7 @@
 """
 Author: Nick Russo
 Purpose: Consume the custom CiscoSDWAN mini-SDK and
-and test its API-based methods.
+and test its Inventory API methods.
 """
 
 from cisco_sdwan import CiscoSDWAN
@@ -15,15 +15,7 @@ def main():
     """
 
     # Create SD-WAN object to DevNet sandbox host
-    sdwan = CiscoSDWAN(
-        # host="sandboxsdwan.cisco.com",
-        host="10.10.20.90",
-        port=8443,
-        # username="devnetuser",
-        username="admin",
-        # password="Cisco123!",
-        password="admin",
-    )
+    sdwan = CiscoSDWAN.get_instance_reserved()
 
     # Create list of functions (not calling them)
     api_calls = [

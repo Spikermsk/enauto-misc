@@ -26,18 +26,22 @@ class CiscoSDWAN:
             "Accept": "application/json",
             "Content-Type": "application/json",
         }
-
-        self.headers = None
         requests.packages.urllib3.disable_warnings()
         self.session = requests.session()
         auth_resp = self.session.post(
             f"{self.base_url}/j_security_check",
-            headers=self.headers,
-            # json=login_creds,
+            headers={"Content-Type": "application/x-www-form-urlencoded"},
             data=login_creds,
             verify=False,
         )
         auth_resp.raise_for_status()
+
+        # URL almost always returns 200, even upon failure. If any
+        # body text is present, that is a failure, likely a credentials issue
+        if auth_resp.text:
+            auth_resp.status_code = 401
+            auth_resp.reason = "UNAUTHORIZED; check username/password"
+            auth_resp.raise_for_status()
 
     @staticmethod
     def run_api_calls(api_calls, filepath="data_ref"):
@@ -53,6 +57,32 @@ class CiscoSDWAN:
             print(f"Executing '{name}' API call")
             with open(f"{filepath}/{name}.json", "w") as handle:
                 json.dump(resp.json(), handle, indent=2)
+
+    @staticmethod
+    def get_instance_always_on():
+        """
+        Factory-style function that retusn a new CiscoSDWAN object
+        connected to the DevNet SDWAN Always-On sandbox.
+        """
+        return CiscoSDWAN(
+            host="sandboxsdwan.cisco.com",
+            port=8443,
+            username="devnetuser",
+            password="Cisco123!",
+        )
+
+    @staticmethod
+    def get_instance_reserved():
+        """
+        Factory-style function that retusn a new CiscoSDWAN object
+        connected to the DevNet SDWAN Reserved sandbox.
+        """
+        return CiscoSDWAN(
+            host="10.10.20.90",
+            port=8443,
+            username="admin",
+            password="admin",
+        )
 
     def _req(self, resource, method="get", params=None, json=None):
         """
@@ -154,3 +184,16 @@ class CiscoSDWAN:
             return self._req("statistics/system", method="post", json=query)
 
         return self._req("dataservice/statistics/system")
+
+    #
+    # Real-time monitoring APIs
+    #
+
+    def get_device_approute_statistics(self, device_id):
+        return self._req("dataservice/device/app-route/statistics", params={"deviceId": device_id})
+        
+    def get_device_tunnel_statistics(self, device_id):
+        return self._req("dataservice/device/tunnel/statistics", params={"deviceId": device_id})
+
+    def get_device_control_connections(self, device_id):
+        return self._req("dataservice/device/control/connections", params={"deviceId": device_id})

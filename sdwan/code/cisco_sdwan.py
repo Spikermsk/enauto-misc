@@ -139,9 +139,7 @@ class CiscoSDWAN:
         """
 
         if query:
-            return self._req(
-                "statistics/dpi/aggregation", method="post", json=query
-            )
+            return self._req("statistics/dpi/aggregation", method="post", json=query)
 
         return self._req("statistics/dpi/aggregation")
 
@@ -153,8 +151,6 @@ class CiscoSDWAN:
         """
 
         if query:
-            return self._req(
-                "statistics/system", method="post", json=query
-            )
+            return self._req("statistics/system", method="post", json=query)
 
         return self._req("dataservice/statistics/system")

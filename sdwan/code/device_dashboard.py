@@ -16,12 +16,12 @@ def main():
 
     # Create SD-WAN object to DevNet sandbox host
     sdwan = CiscoSDWAN(
-        #host="sandboxsdwan.cisco.com",
+        # host="sandboxsdwan.cisco.com",
         host="10.10.20.90",
         port=8443,
-        #username="devnetuser",
+        # username="devnetuser",
         username="admin",
-        #password="Cisco123!",
+        # password="Cisco123!",
         password="admin",
     )
 
@@ -29,7 +29,7 @@ def main():
         sdwan.get_device_top_applications,
         sdwan.get_device_system_summary,
     ]
-    CiscoSDWAN.run_api_calls(api_calls,filepath="current")
+    CiscoSDWAN.run_api_calls(api_calls, filepath="current")
 
 
 if __name__ == "__main__":

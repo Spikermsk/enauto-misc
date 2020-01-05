@@ -83,7 +83,7 @@ def main():
     post_resp.raise_for_status()
 
     # Wait for async job to complete
-    time.sleep(10)
+    #time.sleep(10)
 
     # Query DNA center for the status of the specific task ID
     task = post_resp.json()["response"]["taskId"]
@@ -92,6 +92,7 @@ def main():
         headers=headers,
         verify=False,
     )
+    import pdb; pdb.set_trace()
     task_resp.raise_for_status()
 
     # Extract the task data, which indicates if an error occurred

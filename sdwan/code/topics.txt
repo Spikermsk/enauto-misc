@@ -1,0 +1,11 @@
+Describe features and capabilities of Cisco SD-WAN vManage Certificate Management APIs
+
+Implement a Python script to perform API requests for Cisco SD-WAN vManage Device Inventory APIs to retrieve and display data
+
+Construct API requests for Cisco SD-WAN vManage Administration APIs
+
+Implement a Python script to perform API requests for Cisco SD-WAN vManage Configuration APIs to modify Cisco SD-WAN fabric configuration
+
+Construct API requests for Cisco SD-WAN vManage Monitoring APIs (Including real-time)
+
+Troubleshoot a Cisco SD-WAN deployment using vManage APIs

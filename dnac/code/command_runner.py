@@ -50,6 +50,7 @@ def main():
     # Issue POST request using the command_body just built
     run_resp = dnac.req(
         "dna/intent/api/v1/network-device-poller/cli/read-request",
+        method="post",
         jsonbody=command_body,
     )
 

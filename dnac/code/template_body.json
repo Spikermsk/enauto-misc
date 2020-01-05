@@ -1,5 +1,5 @@
 {
-  "name": "nickrus_temp",
+  "name": "globo_temp",
   "composite": false,
   "deviceTypes": [
     {
@@ -13,11 +13,13 @@
   "templateParams": [
     {
       "parameterName": "hostname",
+      "dataType": "STRING",
       "required": true,
       "order": 1
     },
     {
       "parameterName": "ssh_ver",
+      "dataType": "INTEGER",
       "required": true,
       "order": 2
     }

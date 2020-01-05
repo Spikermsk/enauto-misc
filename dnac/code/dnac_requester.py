@@ -43,7 +43,7 @@ class DNACRequester:
         auth_resp.raise_for_status()
         self.headers["X-Auth-Token"] = auth_resp.json()["Token"]
 
-    def req(self, resource, method="get", auth=None, jsonbody=None, params=None):
+    def req(self, resource, method="get", auth=None, jsonbody=None, params=None, raise_for_status=True):
         """
         Issues a generic request. Basically, a wrapper for "requests" using
         the already-stored host, headers, and verify parameters.
@@ -62,7 +62,8 @@ class DNACRequester:
         # print(json.dumps(resp.json(), indent=2))
 
         # Raise HTTPError if status_code >= 400, otherwise return resp object
-        resp.raise_for_status()
+        if raise_for_status:
+            resp.raise_for_status()
         return resp
 
     def wait_for_task(self, task_id, wait_time=5, attempts=3):

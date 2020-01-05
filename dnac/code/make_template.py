@@ -21,12 +21,11 @@ def main():
     )
 
     # Build a new project using a name and description
-    proj_body = {
-        "name": "nickrus_proj",
-        "description": "testing some python scripts",
-    }
+    proj_body = {"name": "globo_proj", "description": "testing some python scripts"}
     proj_resp = dnac.req(
-        f"dna/intent/api/v1/template-programmer/project", jsonbody=proj_body
+        f"dna/intent/api/v1/template-programmer/project",
+        method="post",
+        jsonbody=proj_body,
     )
 
     # Wait for the project to get completed, then extract the project ID
@@ -38,11 +37,36 @@ def main():
         temp_body = json.load(handle)
     temp_resp = dnac.req(
         f"dna/intent/api/v1/template-programmer/project/{proj_id}/template",
+        method="post",
         jsonbody=temp_body,
     )
 
     # Wait for task to finish, but don't care about data (only error checks)
-    dnac.wait_for_task(temp_resp.json()["response"]["taskId"])
+    temp_task = dnac.wait_for_task(temp_resp.json()["response"]["taskId"])
+    temp_id = temp_task.json()["response"]["data"]
+
+    # Start a simulation (aka preview)
+    prev_body = {
+        "params": {"hostname": "ROUTER1", "ssh_ver": 2},
+        "templateId": temp_id,
+    }
+    prev_resp = dnac.req(
+        f"dna/intent/api/v1/template-programmer/template/preview",
+        method="put",
+        jsonbody=prev_body,
+        raise_for_status=False,
+    )
+
+    # In this rare case, code 500 is acceptable as this usually
+    # indicates the specific template error. All other errors
+    # should crash the program
+    prev_data = prev_resp.json()
+    if prev_resp.ok:
+       print(prev_data["cliPreview"])
+    elif prev_resp.status_code == 500:
+        print(f"Template error: {prev_data['response']['message']}")
+    else:
+        prev_resp.raise_for_status()
 
 
 if __name__ == "__main__":

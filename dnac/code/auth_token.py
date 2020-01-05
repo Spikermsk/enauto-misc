@@ -16,18 +16,23 @@ def get_token(host):
     """
 
     # Declare useful local variables to simplify request process
-    auth = ("devnetuser", "Cisco123!")
+    # auth = ("devnetuser", "Cisco123!")
+    # auth = ("nickrus", "Cisco123!")
+    auth = ("admin", "Cisco1234!")
     headers = {"Content-Type": "application/json"}
 
     # Issue HTTP POST request to the proper URL to request a token
     auth_resp = requests.post(
+        # f"https://{host}/api/system/v1/auth/token",
         f"https://{host}/dna/system/api/v1/auth/token",
         auth=auth,
         headers=headers,
+        verify=False,
     )
 
     # If successful, print token. Else, raise HTTPError with details
     auth_resp.raise_for_status()
+
     token = auth_resp.json()["Token"]
     return token
 
@@ -38,7 +43,7 @@ def main():
     """
 
     # Use the always-on sandbox as a quick test
-    token = get_token("sandboxdnac2.cisco.com")
+    token = get_token("dnac.aws.labrats.se")
     print(token)
 
 

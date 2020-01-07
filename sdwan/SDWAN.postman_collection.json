@@ -1,0 +1,907 @@
+{
+	"info": {
+		"_postman_id": "099bceed-1dcb-4753-887d-4f24cf4a4cb7",
+		"name": "SDWAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Security check",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "j_username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "j_password",
+									"value": "admin",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/j_security_check",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"j_security_check"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "vSmart Template",
+			"item": [
+				{
+					"name": "Get feature templates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/feature",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"feature"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Build device template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"templateName\": \"Basic_template\",\n    \"templateDescription\": \"Collection of default templates\",\n    \"deviceType\": \"vsmart\",\n    \"configType\": \"template\",\n    \"factoryDefault\": false,\n    \"policyId\": \"\",\n    \"featureTemplateUidRange\": [],\n    \"generalTemplates\": [\n        {\n            \"templateId\": \"476b52d0-3196-4625-82be-1deb124a5199\",\n            \"templateType\": \"aaa\"\n        },\n        {\n            \"templateId\": \"2767ed11-d403-42d4-9dcc-f5471e2a2e3b\",\n            \"templateType\": \"omp-vsmart\"\n        },\n        {\n            \"templateId\": \"1918ba5d-e91d-4682-b889-71fd5fd27765\",\n            \"templateType\": \"security-vsmart\"\n        },\n        {\n            \"templateId\": \"ab4beafa-bfa4-44b3-9436-9bb62221420e\",\n            \"templateType\": \"system-vsmart\",\n            \"subTemplates\": [\n                {\n                    \"templateId\": \"6100ab12-610f-4344-b41e-0ca9ff0ee6f6\",\n                    \"templateType\": \"logging\"\n                }\n            ]\n        },\n        {\n            \"templateId\": \"5202f0a4-86c5-40af-979d-492b9e11a90a\",\n            \"templateType\": \"vpn-vsmart\"\n        },\n        {\n            \"templateId\": \"bf3fcac8-8ab3-46a3-9ab5-c0d3e6107826\",\n            \"templateType\": \"vpn-vsmart\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/device/feature/",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"device",
+								"feature",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get device templates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/device",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Attach template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceTemplateList\": [\n        {\n            \"templateId\": \"8edb21b1-3aa0-4e00-88db-5381c4aaeb46\",\n            \"device\": [\n                {\n                    \"csv-status\": \"complete\",\n                    \"csv-deviceId\": \"50cb5f09-3b74-49b7-aa5a-c17db012206c\",\n                    \"csv-deviceIP\": \"4.4.4.70\",\n                    \"csv-host-name\": \"vsmart-01\",\n                    \"/0/vpn-instance/ip/route/0.0.0.0/0/next-hop/address\": \"10.10.20.254\",\n                    \"//system/host-name\": \"vsmart-01\",\n                    \"//system/system-ip\": \"4.4.4.70\",\n                    \"//system/site-id\": \"100\",\n                    \"csv-templateId\": \"8edb21b1-3aa0-4e00-88db-5381c4aaeb46\"\n                }\n            ],\n            \"isEdited\": false,\n            \"isMasterEdited\": false\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/device/config/attachfeature",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"device",
+								"config",
+								"attachfeature"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get template attachment status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/device/action/status/push_feature_template_configuration-9545500b-0c5a-4adc-9fd7-60eb98e73c3c",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"device",
+								"action",
+								"status",
+								"push_feature_template_configuration-9545500b-0c5a-4adc-9fd7-60eb98e73c3c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get vManage mode vSmarts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/config/device/mode/vmanage?type=controller",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"config",
+								"device",
+								"mode",
+								"vmanage"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "controller"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Build a factory default template to move the vSmart from CLI mode to vManage mode. Notes/examples:\n\nget feature templates, feed IDs into build template (in sandbox these values are fixed, low effort)\n\nvsmart \"templateId\": 8edb21b1-3aa0-4e00-88db-5381c4aaeb46\n\nfeeds into \"attach template\" in 2 places\n\nattach \"templateId\": push_feature_template_configuration-9545500b-0c5a-4adc-9fd7-60eb98e73c3c\n\nfeeds into URL of \"get template attachment status\"\n\nstarts off as \"statusId\": \"in_progress\"\n\ncompletes as: \"statusId\": \"success\"\n\nuuid from get template device config 50cb5f09-3b74-49b7-aa5a-c17db012206c",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3333998b-788a-440a-bb7a-9ae540d74402",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4209be72-2f36-4741-8112-dfe7cd9af28e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "vSmart Policy",
+			"item": [
+				{
+					"name": "Add policy site",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"WestUS\",\n    \"description\": \"Desc Not Required\",\n    \"type\": \"site\",\n    \"listId\": null,\n    \"entries\": [\n        {\n            \"siteId\": \"200\"\n        },\n        {\n            \"siteId\": \" 300\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/list/site",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"list",
+								"site"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add policy VPN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Engineering\",\n    \"description\": \"Desc Not Required\",\n    \"type\": \"vpn\",\n    \"listId\": null,\n    \"entries\": [\n        {\n            \"vpn\": \"1\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/list/vpn",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"list",
+								"vpn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add policy SLA class",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Voice\",\n    \"description\": \"Desc Not Required\",\n    \"type\": \"sla\",\n    \"entries\": [\n        {\n            \"latency\": \"150\",\n            \"loss\": \"1\",\n            \"jitter\": \"30\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/list/sla",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"list",
+								"sla"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add mesh topology",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"EngMesh\",\n    \"type\": \"mesh\",\n    \"description\": \"Engineering mesh\",\n    \"definition\": {\n        \"vpnList\": \"61949ba1-c6e4-4539-97ab-b45ab9208b46\",\n        \"regions\": [\n            {\n                \"name\": \"EngWest\",\n                \"siteLists\": [\n                    \"2c5022fa-c5ed-4bc9-9b65-1166f1189b6b\"\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/definition/mesh",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"definition",
+								"mesh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get mesh topology",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MeshTopo\",\n    \"type\": \"mesh\",\n    \"description\": \"meshtopo desc\",\n    \"definition\": {\n        \"vpnList\": \"8e772140-4536-4727-92ad-3e323144a9af\",\n        \"regions\": [\n            {\n                \"name\": \"meshregion\",\n                \"siteLists\": [\n                    \"7f1531a9-2df1-4222-beb2-e48fedf9a48b\"\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/definition/mesh/2cf6ffc8-10ac-4ed8-8afc-e99f42f6b655",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"definition",
+								"mesh",
+								"2cf6ffc8-10ac-4ed8-8afc-e99f42f6b655"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add policy approute",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"VoiceMPLS\",\n    \"type\": \"appRoute\",\n    \"description\": \"Voice DSCP 46 should prefer MPLS circuits\",\n    \"sequences\": [\n        {\n            \"sequenceId\": 1,\n            \"sequenceName\": \"App Route\",\n            \"sequenceType\": \"appRoute\",\n            \"match\": {\n                \"entries\": [\n                    {\n                        \"field\": \"dscp\",\n                        \"value\": \"46\"\n                    }\n                ]\n            },\n            \"actions\": [\n                {\n                    \"type\": \"slaClass\",\n                    \"parameter\": [\n                        {\n                            \"field\": \"name\",\n                            \"ref\": \"bcd001f8-04cc-4601-b50e-7730d296fe58\"\n                        },\n                        {\n                            \"field\": \"preferredColor\",\n                            \"value\": \"mpls\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/definition/approute",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"definition",
+								"approute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get policy approute",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MeshTopo\",\n    \"type\": \"mesh\",\n    \"description\": \"meshtopo desc\",\n    \"definition\": {\n        \"vpnList\": \"8e772140-4536-4727-92ad-3e323144a9af\",\n        \"regions\": [\n            {\n                \"name\": \"meshregion\",\n                \"siteLists\": [\n                    \"7f1531a9-2df1-4222-beb2-e48fedf9a48b\"\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/definition/approute/9a6b173c-8c67-4074-80e6-8539815edbb2",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"definition",
+								"approute",
+								"9a6b173c-8c67-4074-80e6-8539815edbb2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add policy vSmart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"policyDescription\": \"Tie everything together\",\n    \"policyType\": \"feature\",\n    \"policyName\": \"EngPolicy\",\n    \"policyDefinition\": {\n        \"assembly\": [\n            {\n                \"definitionId\": \"9a6b173c-8c67-4074-80e6-8539815edbb2\",\n                \"type\": \"appRoute\",\n                \"entries\": [\n                    {\n                        \"siteLists\": [\n                            \"2c5022fa-c5ed-4bc9-9b65-1166f1189b6b\"\n                        ],\n                        \"vpnLists\": [\n                            \"61949ba1-c6e4-4539-97ab-b45ab9208b46\"\n                        ]\n                    }\n                ]\n            },\n            {\n                \"definitionId\": \"2cf6ffc8-10ac-4ed8-8afc-e99f42f6b655\",\n                \"type\": \"mesh\"\n            }\n        ]\n    },\n    \"isPolicyActivated\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/vsmart/",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"vsmart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get policy vSmart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MeshTopo\",\n    \"type\": \"mesh\",\n    \"description\": \"meshtopo desc\",\n    \"definition\": {\n        \"vpnList\": \"8e772140-4536-4727-92ad-3e323144a9af\",\n        \"regions\": [\n            {\n                \"name\": \"meshregion\",\n                \"siteLists\": [\n                    \"7f1531a9-2df1-4222-beb2-e48fedf9a48b\"\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/vsmart/",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"vsmart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate policy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/policy/vsmart/activate/0ff16784-9746-486c-8c5b-f782a3c47851?confirm=true",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"policy",
+								"vsmart",
+								"activate",
+								"0ff16784-9746-486c-8c5b-f782a3c47851"
+							],
+							"query": [
+								{
+									"key": "confirm",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get policy activation status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/device/action/status/vsmart_policy_config-d7556879-24cb-4e20-a60d-8511dfdf613d",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"device",
+								"action",
+								"status",
+								"vsmart_policy_config-d7556879-24cb-4e20-a60d-8511dfdf613d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Build a simple policy using a subnet of sites, a single full-mesh VPN, and a voice SLA class matching DSCP 46. Apply the policy to vSmart once complete. Notes/examples:\n\nadd policy site \"listId\": \"2c5022fa-c5ed-4bc9-9b65-1166f1189b6b\"\n\nadd policy vpn \"listId\": \"61949ba1-c6e4-4539-97ab-b45ab9208b46\"\n\nadd policy sla \"listId\": \"bcd001f8-04cc-4601-b50e-7730d296fe58\"\n\nsite/vpn IDs feed into mesh topology, returns: \"definitionId\": \"2cf6ffc8-10ac-4ed8-8afc-e99f42f6b655\"\n\nuse mesh definitionId in \"get mesh\" GET request at end of URL\n\npolicy sla listId feeds into \"approute\" under the slaClass \"ref\"\n\nadd policy approute \"definitionId\": \"9a6b173c-8c67-4074-80e6-8539815edbb2\"\n\nuse approute definitionId in \"get approute\" GET request at end of URL\n\nadd policy requires the site listId, vpn listId, approute definitionId, and mesh definitionId (does not need the sla ID). success with no response\n\nneed to issue \"get policy vsmart\" to see \"policyId\": \"0ff16784-9746-486c-8c5b-f782a3c47851\"\n\nuse policyId in activation URL which returns \"id\": \"vsmart_policy_config-d7556879-24cb-4e20-a60d-8511dfdf613d\"\n\n\nuse the above \"id\" in the activation status url.\n\nstarts as: \"status\": \"in_progress\",\n\ncompletes as: \"status\": \"done\"",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7b9a1726-f921-4bd5-b58b-0f6d6ac3166f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c5679827-ddbf-4d5b-a3bf-2cf6df995539",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

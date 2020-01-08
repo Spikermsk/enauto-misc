@@ -79,7 +79,7 @@ class CiscoSDWAN:
         connected to the DevNet SDWAN Reserved sandbox.
         """
         return CiscoSDWAN(
-            host="10.10.20.90", port=8443, username="admin", password="admin",
+            host="10.10.20.90", port=8443, username="admin", password="admin"
         )
 
     def _req(self, resource, method="get", params=None, jsonbody=None):
@@ -293,9 +293,131 @@ class CiscoSDWAN:
         )
 
         attach_id = attach_resp.json()["id"]
+        return self._wait_for_device_action_done(attach_id)
+
+    def _add_policy(self, obj_type, name, entries):
+        body = {
+            "name": name,
+            "description": "Desc Not Required",
+            "type": obj_type,
+            "entries": entries,
+        }
+        return self._req(
+            f"dataservice/template/policy/list/{obj_type}",
+            method="post",
+            jsonbody=body,
+        )
+
+    def add_policy_site(self, name, site_list):
+        entries = [{"siteId": str(site)} for site in site_list]
+        return self._add_policy("site", name, entries)
+
+    def add_policy_vpn(self, name, vpn_list):
+        entries = [{"vpn": str(vpn)} for vpn in vpn_list]
+        return self._add_policy("vpn", name, entries)
+
+    def add_policy_sla(self, name, sla_entries):
+        return self._add_policy("sla", name, sla_entries)
+
+    def add_policy_mesh(self, name, vpn_id, region_map, description="none"):
+        regions = []
+        for name, site_id in region_map.items():
+            regions.append({"name": name, "siteLists": site_id})
+
+        body = {
+            "name": name,
+            "type": "mesh",
+            "description": description,
+            "definition": {"vpnList": vpn_id, "regions": regions},
+        }
+
+        return self._req(
+            f"dataservice/template/policy/definition/mesh",
+            method="post",
+            jsonbody=body,
+        )
+
+    def add_policy_approute_dscp(
+        self, name, sla_id, dscp_dec, color, description="none"
+    ):
+        body = {
+            "name": name,
+            "type": "appRoute",
+            "description": description,
+            "sequences": [
+                {
+                    "sequenceId": 1,
+                    "sequenceName": "App Route",
+                    "sequenceType": "appRoute",
+                    "match": {
+                        "entries": [{"field": "dscp", "value": str(dscp_dec)}]
+                    },
+                    "actions": [
+                        {
+                            "type": "slaClass",
+                            "parameter": [
+                                {"field": "name", "ref": sla_id},
+                                {"field": "preferredColor", "value": color},
+                            ],
+                        }
+                    ],
+                }
+            ],
+        }
+        return self._req(
+            f"dataservice/template/policy/definition/approute",
+            method="post",
+            jsonbody=body,
+        )
+
+    def get_policy_vsmart(self):
+        return self._req(f"dataservice/template/policy/vsmart")
+
+    def add_policy_vsmart(
+        self, name, sites, vpns, approute_id, mesh_id, description="none"
+    ):
+        body = {
+            "policyDescription": description,
+            "policyType": "feature",
+            "policyName": name,
+            "policyDefinition": {
+                "assembly": [
+                    {
+                        "definitionId": approute_id,
+                        "type": "appRoute",
+                        "entries": [{"siteLists": sites, "vpnLists": vpns}],
+                    },
+                    {"definitionId": mesh_id, "type": "mesh"},
+                ]
+            },
+            "isPolicyActivated": False,
+        }
+
+        # No response body
+        self._req(
+            f"dataservice/template/policy/vsmart", method="post", jsonbody=body
+        )
+        policies = self._req(f"dataservice/template/policy/vsmart")
+        for policy in policies.json()["data"]:
+            if policy["policyName"] == name:
+                return policy
+        return {"policyId": None}
+
+    def activate_policy_vsmart(self, policy_id):
+        activate_resp = self._req(
+            f"dataservice/template/policy/vsmart/activate/{policy_id}",
+            method="post",
+            params={"confirm": "true"},
+            jsonbody={},
+        )
+
+        activate_id = activate_resp.json()["id"]
+        return self._wait_for_device_action_done(activate_id)
+
+    def _wait_for_device_action_done(self, uuid, interval=20):
         while True:
-            time.sleep(20)
-            check = self._req(f"dataservice/device/action/status/{attach_id}")
+            time.sleep(interval)
+            check = self._req(f"dataservice/device/action/status/{uuid}")
             if check.json()["summary"]["status"].lower() != "in_progress":
                 break
         return check

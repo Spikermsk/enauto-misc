@@ -6,6 +6,7 @@ Purpose: Create a mini-SDK around Cisco SD-WAN to simplify
 API interactions.
 """
 
+import time
 import json
 import requests
 
@@ -78,13 +79,10 @@ class CiscoSDWAN:
         connected to the DevNet SDWAN Reserved sandbox.
         """
         return CiscoSDWAN(
-            host="10.10.20.90",
-            port=8443,
-            username="admin",
-            password="admin",
+            host="10.10.20.90", port=8443, username="admin", password="admin",
         )
 
-    def _req(self, resource, method="get", params=None, json=None):
+    def _req(self, resource, method="get", params=None, jsonbody=None):
         """
         Internal helper function to issue requests and raise errors
         if the request fails. Returns the entire response object
@@ -95,7 +93,7 @@ class CiscoSDWAN:
             url=f"{self.base_url}/{resource}",
             headers=self.headers,
             params=params,
-            json=json,
+            json=jsonbody,
         )
         resp.raise_for_status()
         return resp
@@ -169,7 +167,9 @@ class CiscoSDWAN:
         """
 
         if query:
-            return self._req("statistics/dpi/aggregation", method="post", json=query)
+            return self._req(
+                "statistics/dpi/aggregation", method="post", jsonbody=query
+            )
 
         return self._req("statistics/dpi/aggregation")
 
@@ -181,7 +181,7 @@ class CiscoSDWAN:
         """
 
         if query:
-            return self._req("statistics/system", method="post", json=query)
+            return self._req("statistics/system", method="post", jsonbody=query)
 
         return self._req("dataservice/statistics/system")
 
@@ -190,10 +190,112 @@ class CiscoSDWAN:
     #
 
     def get_device_approute_statistics(self, device_id):
-        return self._req("dataservice/device/app-route/statistics", params={"deviceId": device_id})
-        
+        return self._req(
+            "dataservice/device/app-route/statistics",
+            params={"deviceId": device_id},
+        )
+
     def get_device_tunnel_statistics(self, device_id):
-        return self._req("dataservice/device/tunnel/statistics", params={"deviceId": device_id})
+        return self._req(
+            "dataservice/device/tunnel/statistics", params={"deviceId": device_id}
+        )
 
     def get_device_control_connections(self, device_id):
-        return self._req("dataservice/device/control/connections", params={"deviceId": device_id})
+        return self._req(
+            "dataservice/device/control/connections", params={"deviceId": device_id}
+        )
+
+    def get_feature_templates(self):
+        return self._req("dataservice/template/feature")
+
+    def add_fd_vsmart_device_template(self):
+        """
+        Combine the required factory default feature templates into
+        a vSmart template. this includes AAA, security, system, OMP,
+        VPN 0, and VPN 512.
+        """
+
+        all_temps = self.get_feature_templates()
+        fd_temps = []
+        for temp in all_temps.json()["data"]:
+            temp_type = temp["templateType"].lower()
+            if temp["factoryDefault"] and (
+                temp_type.endswith("vsmart") or temp_type == "aaa"
+            ):
+                fd_temps.append(
+                    {
+                        "templateId": temp["templateId"],
+                        "templateType": temp["templateType"],
+                    }
+                )
+
+        body = {
+            "templateName": "Basic_template",
+            "templateDescription": "Collection of default templates",
+            "deviceType": "vsmart",
+            "configType": "template",
+            "factoryDefault": False,
+            "policyId": "",
+            "featureTemplateUidRange": [],
+            "generalTemplates": fd_temps,
+        }
+        add_temp = self._req(
+            "dataservice/template/feature", method="post", jsonbody=body
+        )
+        return add_temp
+
+    def get_devices(self):
+        """
+        Returns a list of all SD-WAN devices.
+        """
+        return self._req("device")
+
+    def attach_vsmart_device_template(self, template_id, var_map):
+        """
+        Given an existing template and supplied variables, attaches
+        the vSmart template to all discovered vSmart instances.
+        The var_map uses hostnames as keys and a 2-tuple as the value,
+        containing the site ID and default gateway IP address as strings:
+          var_map = {"vsmart-01": ("100", "10.10.20.254")}
+        """
+        devices = self.get_devices()
+        vsmarts = []
+        for dev in devices.json()["data"]:
+            if dev["device-model"].lower() == "vsmart":
+                site_id, def_gway = var_map[dev["host-name"]]
+                vsmart_dict = {
+                    "csv-status": "complete",
+                    "csv-deviceId": dev["uuid"],
+                    "csv-deviceIP": dev["system-ip"],
+                    "csv-host-name": dev["host-name"],
+                    "/0/vpn-instance/ip/route/0.0.0.0/0/next-hop/address": def_gway,
+                    "//system/host-name": dev["host-name"],
+                    "//system/system-ip": dev["system-ip"],
+                    "//system/site-id": site_id,
+                    "csv-templateId": template_id,
+                }
+                vsmarts.append(vsmart_dict)
+
+        body = {
+            "deviceTemplateList": [
+                {
+                    "templateId": template_id,
+                    "device": vsmarts,
+                    "isEdited": False,
+                    "isMasterEdited": False,
+                }
+            ]
+        }
+        attach_resp = self._req(
+            "dataservice/template/device/config/attachfeature",
+            method="post",
+            jsonbody=body,
+        )
+
+        attach_id = attach_resp.json()["id"]
+        while True:
+            time.sleep(20)
+            check = self._req(f"dataservice/device/action/status/{attach_id}")
+            if check.json()["summary"]["status"].lower() != "in_progress":
+                break
+        return check

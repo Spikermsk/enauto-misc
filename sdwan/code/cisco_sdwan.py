@@ -240,7 +240,7 @@ class CiscoSDWAN:
             "generalTemplates": fd_temps,
         }
         add_temp = self._req(
-            "dataservice/template/feature", method="post", jsonbody=body
+            "dataservice/template/device/feature", method="post", jsonbody=body
         )
         return add_temp
 
@@ -248,7 +248,7 @@ class CiscoSDWAN:
         """
         Returns a list of all SD-WAN devices.
         """
-        return self._req("device")
+        return self._req("dataservice/device")
 
     def attach_vsmart_device_template(self, template_id, var_map):
         """

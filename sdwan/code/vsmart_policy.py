@@ -30,12 +30,17 @@ def main():
     ).json()["listId"]
     print(f"Created SLA class with ID {sla_id}")
 
+    # Create mesh network with a single region combining the VPN
+    # and site IDs from earlier
     mesh_id = sdwan.add_policy_mesh(
         "EngMesh", vpn_id, {"EngWest": [site_id]}
     ).json()["definitionId"]
     print(f"Created mesh network with ID {mesh_id}")
 
-    approute_id = sdwan.add_policy_approute_dscp(
+    # Create an application routing policy for Voice over IP traffic.
+    # DSCP 46 traffic (voice) should prefer MPLS links as long as those
+    # links meet the SLA requirements outlined above.
+    approute_id = sdwan.add_policy_approute(
         "VoiceMPLS",
         sla_id,
         46,
@@ -44,16 +49,16 @@ def main():
     ).json()["definitionId"]
     print(f"Created voice-over-mpls approute with ID {approute_id}")
 
+    # Create a vSmart policy combining all the components from
+    # earlier (minus the SLA class) to control traffic flows.
     policy_id = sdwan.add_policy_vsmart(
         "EngPolicy", [site_id], [vpn_id], approute_id, mesh_id
     )["policyId"]
     print(f"Created vsmart policy with ID {policy_id}")
 
+    # Activate the vSmart policy (async) and wait for completion
     activate_resp = sdwan.activate_policy_vsmart(policy_id)
-
-    # check for success
-    data = activate_resp.json()
-    status = data["summary"]["status"]
+    status = activate_resp.json()["summary"]["status"]
     print(f"vSmart policy activation status: {status}")
 
 

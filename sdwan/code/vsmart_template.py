@@ -26,10 +26,8 @@ def main():
     template_id = temp_resp.json()["templateId"]
     var_map = {"vsmart-01": ("100", "10.10.20.254")}
 
-    # Attach the template to the vSmarts
+    # Attach the template to the vSmarts (async) and wait for completion
     attach_resp = sdwan.attach_vsmart_device_template(template_id, var_map)
-
-    # check for success
     data = attach_resp.json()
     status = data["summary"]["status"]
     print(f"vSmart template attachment status: {status}")

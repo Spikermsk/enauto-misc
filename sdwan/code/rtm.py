@@ -27,13 +27,6 @@ def main():
             vedge_id = vedge["system-ip"]
             print(f"Starting  vEdge {vedge_id} collection")
 
-            # Collect the approute statistics. This will list
-            # all traffic seen from this vEdge, and is often huge.
-            # approute = sdwan.get_device_approute_statistics(vedge_id)
-            # print(f" Approute statistics")
-            # for item in approute.json()["data"]:
-                # print(f"  index: {item['index']} to {item['dst-ip']}")
-
             # Collect the tunnel statistics. This will list
             # the tunnels to all other vEdges and their performance data
             tunnel = sdwan.get_device_tunnel_statistics(vedge_id)
@@ -41,7 +34,7 @@ def main():
             for item in tunnel.json()["data"]:
                 print(
                     f"  pkts tx/rx: {item['tx_pkts']}/{item['rx_pkts']}"
-                    f" proto: {item['tunnel-protocol']} to {item['dest-ip']}"
+                    f"  proto: {item['tunnel-protocol']} to {item['dest-ip']}"
                 )
 
             # Collect the control connection details. This will list

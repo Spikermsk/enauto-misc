@@ -127,7 +127,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"templateName\": \"Basic_template\",\n    \"templateDescription\": \"Collection of default templates\",\n    \"deviceType\": \"vsmart\",\n    \"configType\": \"template\",\n    \"factoryDefault\": false,\n    \"policyId\": \"\",\n    \"featureTemplateUidRange\": [],\n    \"generalTemplates\": [\n        {\n            \"templateId\": \"476b52d0-3196-4625-82be-1deb124a5199\",\n            \"templateType\": \"aaa\"\n        },\n        {\n            \"templateId\": \"2767ed11-d403-42d4-9dcc-f5471e2a2e3b\",\n            \"templateType\": \"omp-vsmart\"\n        },\n        {\n            \"templateId\": \"1918ba5d-e91d-4682-b889-71fd5fd27765\",\n            \"templateType\": \"security-vsmart\"\n        },\n        {\n            \"templateId\": \"ab4beafa-bfa4-44b3-9436-9bb62221420e\",\n            \"templateType\": \"system-vsmart\",\n            \"subTemplates\": [\n                {\n                    \"templateId\": \"6100ab12-610f-4344-b41e-0ca9ff0ee6f6\",\n                    \"templateType\": \"logging\"\n                }\n            ]\n        },\n        {\n            \"templateId\": \"5202f0a4-86c5-40af-979d-492b9e11a90a\",\n            \"templateType\": \"vpn-vsmart\"\n        },\n        {\n            \"templateId\": \"bf3fcac8-8ab3-46a3-9ab5-c0d3e6107826\",\n            \"templateType\": \"vpn-vsmart\"\n        }\n    ]\n}",
+							"raw": "{\n    \"templateName\": \"Basic_template\",\n    \"templateDescription\": \"Collection of default templates\",\n    \"deviceType\": \"vsmart\",\n    \"configType\": \"template\",\n    \"factoryDefault\": false,\n    \"policyId\": \"\",\n    \"featureTemplateUidRange\": [],\n    \"generalTemplates\": [\n        {\n            \"templateId\": \"476b52d0-3196-4625-82be-1deb124a5199\",\n            \"templateType\": \"aaa\"\n        },\n        {\n            \"templateId\": \"2767ed11-d403-42d4-9dcc-f5471e2a2e3b\",\n            \"templateType\": \"omp-vsmart\"\n        },\n        {\n            \"templateId\": \"1918ba5d-e91d-4682-b889-71fd5fd27765\",\n            \"templateType\": \"security-vsmart\"\n        },\n        {\n            \"templateId\": \"ab4beafa-bfa4-44b3-9436-9bb62221420e\",\n            \"templateType\": \"system-vsmart\"\n        },\n        {\n            \"templateId\": \"5202f0a4-86c5-40af-979d-492b9e11a90a\",\n            \"templateType\": \"vpn-vsmart\"\n        },\n        {\n            \"templateId\": \"bf3fcac8-8ab3-46a3-9ab5-c0d3e6107826\",\n            \"templateType\": \"vpn-vsmart\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -185,6 +185,41 @@
 							"path": [
 								"dataservice",
 								"template",
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get device list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/device",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
 								"device"
 							]
 						}
@@ -322,7 +357,7 @@
 					"response": []
 				}
 			],
-			"description": "Build a factory default template to move the vSmart from CLI mode to vManage mode. Notes/examples:\n\nget feature templates, feed IDs into build template (in sandbox these values are fixed, low effort)\n\nvsmart \"templateId\": 8edb21b1-3aa0-4e00-88db-5381c4aaeb46\n\nfeeds into \"attach template\" in 2 places\n\nattach \"templateId\": push_feature_template_configuration-9545500b-0c5a-4adc-9fd7-60eb98e73c3c\n\nfeeds into URL of \"get template attachment status\"\n\nstarts off as \"statusId\": \"in_progress\"\n\ncompletes as: \"statusId\": \"success\"\n\nuuid from get template device config 50cb5f09-3b74-49b7-aa5a-c17db012206c",
+			"description": "Build a factory default template to move the vSmart from CLI mode to vManage mode. Notes/examples:\n\nget feature templates, feed IDs into build template (in sandbox these values are fixed, low effort)\n\nvsmart \"templateId\": 8edb21b1-3aa0-4e00-88db-5381c4aaeb46\n\nalso need to get devices to extract vsmart uuid\n\nfeeds into \"attach template\" in 2 places (As does vsmart uuid)\n\nattach \"templateId\": push_feature_template_configuration-9545500b-0c5a-4adc-9fd7-60eb98e73c3c\n\nfeeds into URL of \"get template attachment status\"\n\nstarts off as \"statusId\": \"in_progress\"\n\ncompletes as: \"statusId\": \"done\"",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -369,7 +404,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"WestUS\",\n    \"description\": \"Desc Not Required\",\n    \"type\": \"site\",\n    \"listId\": null,\n    \"entries\": [\n        {\n            \"siteId\": \"200\"\n        },\n        {\n            \"siteId\": \" 300\"\n        }\n    ]\n}",
+							"raw": "{\n    \"name\": \"WestUS\",\n    \"description\": \"Desc Not Required\",\n    \"type\": \"site\",\n    \"entries\": [\n        {\n            \"siteId\": \"200\"\n        },\n        {\n            \"siteId\": \" 300\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -416,7 +451,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Engineering\",\n    \"description\": \"Desc Not Required\",\n    \"type\": \"vpn\",\n    \"listId\": null,\n    \"entries\": [\n        {\n            \"vpn\": \"1\"\n        }\n    ]\n}",
+							"raw": "{\n    \"name\": \"Engineering\",\n    \"description\": \"Desc Not Required\",\n    \"type\": \"vpn\",\n    \"entries\": [\n        {\n            \"vpn\": \"1\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"

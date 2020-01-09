@@ -41,11 +41,12 @@ def main():
     # DSCP 46 traffic (voice) should prefer MPLS links as long as those
     # links meet the SLA requirements outlined above.
     approute_id = sdwan.add_policy_approute(
-        "VoiceMPLS",
-        sla_id,
-        46,
-        "mpls",
-        description="Voice DSCP 46 should prefer MPLS",
+        name="VoiceMPLS",
+        sla_id=sla_id,
+        dscp=46,
+        pri_link="mpls",
+        alt_link="biz-internet",
+        description="Voice should prefer MPLS first, then Internet",
     ).json()["definitionId"]
     print(f"Created voice-over-mpls approute with ID {approute_id}")
 
@@ -58,8 +59,9 @@ def main():
 
     # Activate the vSmart policy (async) and wait for completion
     activate_resp = sdwan.activate_policy_vsmart(policy_id)
-    status = activate_resp.json()["summary"]["status"]
-    print(f"vSmart policy activation status: {status}")
+    data = activate_resp.json()["summary"]
+    print(f"vSmart policy activation status: {data['status']}")
+    print(f"Result counts: {data['count']}")
 
 
 if __name__ == "__main__":

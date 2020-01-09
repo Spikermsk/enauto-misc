@@ -25,12 +25,13 @@ def main():
     # to attach the template. Each kv-pair maps to a vSmart instance.
     template_id = temp_resp.json()["templateId"]
     var_map = {"vsmart-01": ("100", "10.10.20.254")}
+    print(f"Added vSmart template (factory-defaults) with ID {template_id}")
 
     # Attach the template to the vSmarts (async) and wait for completion
     attach_resp = sdwan.attach_vsmart_device_template(template_id, var_map)
-    data = attach_resp.json()
-    status = data["summary"]["status"]
-    print(f"vSmart template attachment status: {status}")
+    data = attach_resp.json()["summary"]
+    print(f"vSmart template attachment status: {data['status']}")
+    print(f"Result counts: {data['count']}")
 
 
 if __name__ == "__main__":

@@ -32,10 +32,11 @@ class CiscoSDWAN:
 
         # Create a new, long-lived TCP session, and authenticate
         self.session = requests.session()
-        auth_resp = self._req(
-            "j_security_check",
-            method="post",
+        auth_resp = self.session.post(
+            f"{self.base_url}/j_security_check",
+            headers={"Content-Type": "application/x-www-form-urlencoded"},
             data={"j_username": username, "j_password": password},
+            verify=self.verify,
         )
 
         # URL almost always returns 200, even upon failure. If any
@@ -97,7 +98,7 @@ class CiscoSDWAN:
     # Generic internal helpers
     #
 
-    def _req(self, resource, method="get", params=None, data=None):
+    def _req(self, resource, method="get", params=None, jsonbody=None):
         """
         Internal helper function to issue requests and raise errors
         if the request fails. Returns the entire response object
@@ -109,7 +110,7 @@ class CiscoSDWAN:
             url=f"{self.base_url}/{resource}",
             headers=self.headers,
             params=params,
-            data=data,
+            json=jsonbody,
             verify=self.verify,
         )
         resp.raise_for_status()
@@ -141,7 +142,7 @@ class CiscoSDWAN:
         Display all Viptela devices in the overlay network that are
         connected to the vManage NMS.
         """
-        params = {"model": model} if model else None
+        params = {"device-model": model} if model else None
         return self._req("dataservice/device", params=params)
 
     def get_device_controllers(self, model=None):
@@ -273,7 +274,7 @@ class CiscoSDWAN:
 
         # Issue the POST request and return the result
         return self._req(
-            "dataservice/template/device/feature", method="post", data=body
+            "dataservice/template/device/feature", method="post", jsonbody=body
         )
 
     def attach_vsmart_device_template(self, template_id, var_map):
@@ -324,7 +325,7 @@ class CiscoSDWAN:
         attach_resp = self._req(
             "dataservice/template/device/config/attachfeature",
             method="post",
-            data=body,
+            jsonbody=body,
         )
 
         # Extract the attachment action ID and wait for completion
@@ -347,7 +348,9 @@ class CiscoSDWAN:
 
         # Issue the POST request and return the result
         return self._req(
-            f"dataservice/template/policy/list/{obj_type}", method="post", data=body,
+            f"dataservice/template/policy/list/{obj_type}",
+            method="post",
+            jsonbody=body,
         )
 
     def add_policy_site(self, name, site_list):
@@ -394,10 +397,14 @@ class CiscoSDWAN:
 
         # Issue the POST request and return the result
         return self._req(
-            f"dataservice/template/policy/definition/mesh", method="post", data=body,
+            f"dataservice/template/policy/definition/mesh",
+            method="post",
+            jsonbody=body,
         )
 
-    def add_policy_approute(self, name, sla_id, dscp, color, description="none"):
+    def add_policy_approute(
+        self, name, sla_id, dscp, pri_link, alt_link, description="none"
+    ):
         """
         Add a new approute policy based on existing SLA classes, link colors,
         and a static DSCP value (in decimal).
@@ -419,9 +426,10 @@ class CiscoSDWAN:
                             "type": "slaClass",
                             "parameter": [
                                 {"field": "name", "ref": sla_id},
-                                {"field": "preferredColor", "value": color},
+                                {"field": "preferredColor", "value": pri_link},
                             ],
-                        }
+                        },
+                        {"type": "backupSlaPreferredColor", "parameter": alt_link},
                     ],
                 }
             ],
@@ -431,7 +439,7 @@ class CiscoSDWAN:
         return self._req(
             f"dataservice/template/policy/definition/approute",
             method="post",
-            data=body,
+            jsonbody=body,
         )
 
     def get_policy_vsmart(self):
@@ -469,7 +477,9 @@ class CiscoSDWAN:
         }
 
         # Activation does not return anything
-        self._req(f"dataservice/template/policy/vsmart", method="post", data=body)
+        self._req(
+            f"dataservice/template/policy/vsmart", method="post", jsonbody=body
+        )
 
         # Manually collect all vSmart policies, perform a simple
         # linear search to find the matching policy, then return it
@@ -491,7 +501,7 @@ class CiscoSDWAN:
             f"dataservice/template/policy/vsmart/activate/{policy_id}",
             method="post",
             params={"confirm": "true"},
-            data={},
+            jsonbody={},
         )
 
         # Extract the activation ID and wait for it to complete

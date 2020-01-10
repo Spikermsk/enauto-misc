@@ -59,7 +59,7 @@ class DNACRequester:
         )
 
         # Debugging statement to explore the response body structure
-        # print(json.dumps(resp.json(), indent=2))
+        # import json; print(json.dumps(resp.json(), indent=2))
 
         # Raise HTTPError if status_code >= 400, otherwise return resp object
         if raise_for_status:

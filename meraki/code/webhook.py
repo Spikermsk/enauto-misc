@@ -3,14 +3,14 @@
 """
 Author: Nick Russo
 Purpose: Using the Cisco Meraki REST API to create/update
-organizations and their networks in the Cisco DevNet sandbox.
-Note that you can use the Enterprise or Small Business sandboxes
-with this script (or a production deployment).
+webhooks. The webhook data is read in from a JSON file,
+and this script automatically trigger test webhooks.
 """
 
 import sys
+import time
 import json
-from meraki_helpers import find_id_by_name, req
+from meraki_helpers import get_devnet_network_id, req
 
 
 def main(net_name):
@@ -18,27 +18,8 @@ def main(net_name):
     Execution begins here.
     """
 
-    # First, get all organizations
-    orgs = req("organizations").json()
-
-    # See if supplied org_name is already present by looping
-    # over all collected organizations
-    org_id = find_id_by_name(orgs, "devnet sandbox")
-
-    # If we didn't find the organization
-    if not org_id:
-        raise ValueError("could not find 'devnet sandbox' organization")
-
-    # Second, get all networks inside that organization
-    nets = req(f"organizations/{org_id}/networks").json()
-
-    # See if supplied net_name is already present by looping
-    # over all collected organization networks
-    net_id = find_id_by_name(nets, net_name)
-
-    # If we didn't find the network
-    if not net_id:
-        raise ValueError(f"could not find '{net_name}' organization")
+    # Find the network ID for our reserved instance
+    net_id = get_devnet_network_id(net_name)
 
     # Load in the webhooks to add from the JSON file
     with open("add_webhooks.json", "r") as handle:
@@ -56,7 +37,11 @@ def main(net_name):
             f"networks/{net_id}/httpServers", method="post", json=webhook
         ).json()
 
+        # Print JSON structure of response for troubleshooting
+        # print(json.dumps(add_http, indent=2))
+
         # Send a test webhook to each server based on URL
+        # after waiting a few seconds to reduce race condition likelihood
         print(f"testing webhook '{webhook['name']}'")
         test_http = req(
             f"networks/{net_id}/httpServers/webhookTests",
@@ -64,10 +49,26 @@ def main(net_name):
             json={"url": webhook["url"]},
         ).json()
 
-        # Ensure the webhooks are enqueued; check the individual
-        # webservers manually to ensure success
+        # Ensure the webhooks are enqueued (ie, started successfully)
         if test_http["status"] != "enqueued":
-            raise ValueError("webhook test failed: {test_http['status']}")
+            raise ValueError("webhook creation failed: {test_http['status']}")
+
+        # Wait until the state changes from "enqueued"
+        while test_http["status"] == "enqueued":
+
+            # Print JSON structure of response for troubleshooting
+            # print(json.dumps(test_http, indent=2))
+
+            # Rewrite "test_http" to update the status every few seconds
+            time.sleep(2)
+            test_http = req(
+                f"networks/{net_id}/httpServers/webhookTests/{test_http['id']}",
+            ).json()
+
+        # The final status should be "delivered"; if not, raise error
+        # For additional confirmation, check the webhook receivers too
+        if test_http["status"] != "delivered":
+            raise ValueError("webhook delivery failed: {test_http['status']}")
 
     # Collect the current webhooks and print them as confirmation
     net_http = req(f"networks/{net_id}/httpServers").json()
@@ -76,10 +77,10 @@ def main(net_name):
 
 
 if __name__ == "__main__":
-    # Ensure there are exactly 2 CLI arguments (file name, net name)
+    # Ensure there are exactly 2 CLI args (file name, net name)
     if len(sys.argv) != 2:
         print("usage: python build_network.py <net_name>")
         sys.exit(1)
 
-    # Pass in the net name into main()
+    # Pass in the arguments into main()
     main(sys.argv[1])

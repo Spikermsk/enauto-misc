@@ -7,5 +7,5 @@
     "switch",
     "wireless"
   ],
-  "disableMyMerakiCom": false
+  "disableMyMerakiCom": true
 }

@@ -5,7 +5,7 @@ print(s)
 
 # http://localhost:5000/?base_grant_url=https://n143.network-auth.com/splash/grant&user_continue_url=http://speedof.me/&node_id=149624922840090&node_mac=88:15:44:60:1c:1a&gateway_id=149624922840090&client_ip=10.255.60.208&client_mac=f4:5c:89:9b:17:67
 
-url = "https://yourserver/splash.html"
+url = "http://52.206.215.125/index.html"
 params = {
     "base_grant_url": "https://n143.network-auth.com/splash/grant",
     "user_continue_url": "http://speedof.me/",
@@ -15,3 +15,9 @@ params = {
     "client_ip": "10.255.60.208",
     "client_mac": "f4:5c:89:9b:17:67"
 }
+
+import requests
+resp = requests.get(url, params=params)
+print(resp)
+breakpoint()
+print(resp)

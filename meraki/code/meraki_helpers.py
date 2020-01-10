@@ -14,14 +14,46 @@ def find_id_by_name(list_of_dicts, search_name):
     """
     Performs a simple linear search on the supplied list of dictionaries,
     checking the "name" value of each item for a match against search_name.
-    Returns the "id" value if an item is found, integer 0 otherwise.
+    Returns the "id" value if an item is found, None otherwise.
     """
-    found_id = 0
+    found_id = None
     for item in list_of_dicts:
         if item["name"].lower() == search_name.lower():
             found_id = item["id"]
             break
     return found_id
+
+def get_devnet_network_id(net_name):
+    """
+    Most configuration changes require specifying the network ID
+    being modified, so it is useful to quickly find a given ID
+    in a reserved sandbox.
+    """
+
+    # First, get all organizations
+    orgs = req("organizations").json()
+
+    # See if supplied org_name is already present by looping
+    # over all collected organizations
+    org_id = find_id_by_name(orgs, "devnet sandbox")
+
+    # If we didn't find the organization
+    if not org_id:
+        raise ValueError("could not find 'devnet sandbox' organization")
+
+    # Second, get all networks inside that organization
+    nets = req(f"organizations/{org_id}/networks").json()
+
+    # See if supplied net_name is already present by looping
+    # over all collected organization networks
+    net_id = find_id_by_name(nets, net_name)
+
+    # If we didn't find the network
+    if not net_id:
+        raise ValueError(f"could not find '{net_name}' organization")
+
+    # Network ID was found, return it
+    return net_id
 
 
 def req(resource, method="get", json=None):

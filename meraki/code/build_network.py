@@ -21,6 +21,9 @@ def main(org_name, net_name):
     # First, get all organizations
     orgs = req("organizations").json()
 
+    # Print the list of organizations for troubleshooting
+    print(json.dumps(orgs, indent=2))
+
     # See if supplied org_name is already present by looping
     # over all collected organizations
     org_id = find_id_by_name(orgs, org_name)
@@ -45,6 +48,9 @@ def main(org_name, net_name):
 
         # Second, get all networks inside that organization
         nets = req(f"organizations/{org_id}/networks").json()
+
+        # Print the list of organizations for troubleshooting
+        print(json.dumps(nets, indent=2))
 
         # See if supplied net_name is already present by looping
         # over all collected organization networks
@@ -75,10 +81,10 @@ def main(org_name, net_name):
 
 
 if __name__ == "__main__":
-    # Ensure there are exactly 3 CLI arguments (file name, org name, net name)
+    # Ensure there are exactly 3 CLI args (file name, org name, net name)
     if len(sys.argv) != 3:
         print("usage: python build_network.py <org_name> <net_name>")
         sys.exit(1)
 
-    # Pass in the org name and net name into main()
+    # Pass in the arguments into main()
     main(sys.argv[1], sys.argv[2])

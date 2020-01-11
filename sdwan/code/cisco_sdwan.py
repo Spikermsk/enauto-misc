@@ -507,3 +507,33 @@ class CiscoSDWAN:
         # Extract the activation ID and wait for it to complete
         activate_id = activate_resp.json()["id"]
         return self._wait_for_device_action_done(activate_id)
+
+    #
+    # Administrative APIs
+    #
+
+    def is_admin(self):
+        resp = self._req("dataservice/admin/user/role")
+        return resp.json()["isAdmin"]
+
+    def get_audit_log(self):
+        return self._req("dataservice/auditlog")
+
+    def add_user_group(self, body):
+        return self._req("dataservice/admin/usergroup", method="post", jsonbody=body)
+
+    def add_user(self, username, fullname, group_list):
+        body = {
+            "group": group_list,
+            "description": fullname,
+            "userName": username,
+            "password": "abc123",
+        }
+        return self._req("dataservice/admin/user", method="post", jsonbody=body)
+
+    def update_password(self, username, password):
+        body = {
+            "userName": username,
+            "password": password,
+        }
+        return self._req("dataservice/admin/user/password/{username}", method="put", jsonbody=body)

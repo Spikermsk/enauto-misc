@@ -3,7 +3,7 @@
 """
 Author: Nick Russo
 Purpose: Consume the custom CiscoSDWAN mini-SDK and
-and add a new vSmart device template.
+add a new vSmart device template.
 """
 
 from cisco_sdwan import CiscoSDWAN

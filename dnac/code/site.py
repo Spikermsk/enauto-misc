@@ -2,7 +2,7 @@
 
 """
 Author: Nick Russo
-Purpose: Demonstrate how to use the template programmer tool on
+Purpose: Demonstrate how to use the site API (health) on
 Cisco DNA center via API calls.
 """
 

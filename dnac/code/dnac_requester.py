@@ -79,9 +79,11 @@ class DNACRequester:
             task_resp = self.req(f"dna/intent/api/v1/task/{task_id}")
             task_data = task_resp.json()["response"]
 
-            # If an error occurred, fail immediately
+            # If an error occurred, fail immediately. The failure reason is
+            # often defined, but if not, use the progress string
             if task_data["isError"]:
-                raise ValueError(f"Async task error: {task_data['progress']}")
+                reason = task_data.get("failureReason", task_data["progress"])
+                raise ValueError(f"Async task error: {reason}")
 
             # isError is false, but we might not be done yet. Check for
             # the "endTime" key. If present, we are done

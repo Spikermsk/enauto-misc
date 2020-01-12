@@ -2,7 +2,7 @@
   "version": "1.0",
   "response": [
     {
-      "time": "2020-01-12T02:05:00.000+0000",
+      "time": "2020-01-12T14:40:00.000+0000",
       "healthScore": 100,
       "totalCount": 14,
       "goodCount": 14,
@@ -10,7 +10,7 @@
       "fairCount": 0,
       "badCount": 0,
       "entity": null,
-      "timeinMillis": 1578794700000
+      "timeinMillis": 1578840000000
     }
   ],
   "measuredBy": "global",

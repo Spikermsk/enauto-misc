@@ -513,16 +513,30 @@ class CiscoSDWAN:
     #
 
     def is_admin(self):
+        """
+        Returns True if the current user has admin privileges; False otherwise.
+        """
         resp = self._req("dataservice/admin/user/role")
         return resp.json()["isAdmin"]
 
     def get_audit_log(self):
+        """
+        Returns the audio log.
+        """
         return self._req("dataservice/auditlog")
 
     def add_user_group(self, body):
+        """
+        Adds a new user group given the properly-formatted dictionary body.
+        """
         return self._req("dataservice/admin/usergroup", method="post", jsonbody=body)
 
     def add_user(self, username, fullname, group_list):
+        """
+        Adds a new user given a username and full name (description), and
+        a group list. The default password is "abc123" which should
+        immediately be changed.
+        """
         body = {
             "group": group_list,
             "description": fullname,
@@ -532,8 +546,27 @@ class CiscoSDWAN:
         return self._req("dataservice/admin/user", method="post", jsonbody=body)
 
     def update_password(self, username, password):
-        body = {
-            "userName": username,
-            "password": password,
-        }
-        return self._req("dataservice/admin/user/password/{username}", method="put", jsonbody=body)
+        """
+        Update the password for an existing user by supplying the username and
+        new password to set.
+        """
+        body = {"userName": username, "password": password}
+        return self._req(
+            "dataservice/admin/user/password/{username}", method="put", jsonbody=body
+        )
+
+    #
+    # Certificate Management APIs
+    #
+
+    def get_controller_certs(self):
+        """
+        Returns the vSmart list, which contains each controllert cert.
+        """
+        return self._req("dataservice/certificate/vsmart/list")
+
+    def get_root_cert(self):
+        """
+        Returns the root certificate from the CA that signed all other certs.
+        """
+        return self._req("dataservice/certificate/rootcertificate")

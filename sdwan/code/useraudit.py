@@ -59,8 +59,9 @@ def main():
     # Store log entries in a CSV file for easy viewing (security auditors
     # love CSV files). Can also access via GUI here in DevNet sandbox:
     # https://10.10.20.90:8443/index.html#/app/monitor/auditlog
-    print("Creating 'log.csv' from vManage audit log")
-    with open("log.csv", "w") as handle:
+    outfile = "log_useraudit.csv"
+    print(f"Creating '{outfile}' from vManage audit log")
+    with open(outfile, "w") as handle:
         handle.write("dtg,device,user,msg\n")
         for log in audit_resp.json()["data"]:
             dtg = datetime.fromtimestamp(log["entry_time"] // 1000, timezone.utc)
@@ -68,7 +69,7 @@ def main():
             user = log["loguser"]
             msg = log["logmessage"]
             handle.write(f"{dtg},{device},{user},{msg}\n")
-    print("Use 'column -s, device-t log.csv | less -S' to view from shell")
+    print(f"Use 'column -s, -t {outfile} | less -S' to view from shell")
 
 
 if __name__ == "__main__":

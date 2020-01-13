@@ -183,27 +183,7 @@ class CiscoSDWAN:
         return self._req("dataservice/device/control/count")
 
     #
-    # Device Dashboard APIs
-    #
-
-    def get_device_top_applications(self, query=None):
-        """
-        Display applications with the highest utilization for a device.
-        Use a GET request if query is not specified to collect all data.
-        Use a POST request if query is specified to collect data subsets.
-        """
-        raise NotImplementedError("coming soon")
-
-    def get_device_system_summary(self, query=None):
-        """
-        Display historical memory and CPU information about the device.
-        Use a GET request if query is not specified to collect all data.
-        Use a POST request if query is specified to collect data subsets.
-        """
-        raise NotImplementedError("coming soon")
-
-    #
-    # Real-time monitoring APIs
+    # Real-time monitoring and Device Dashboard APIs (Troubleshooting)
     #
 
     def get_device_tunnel_statistics(self, device_id):
@@ -220,6 +200,15 @@ class CiscoSDWAN:
         """
         return self._req(
             "dataservice/device/control/connections", params={"deviceId": device_id}
+        )
+
+    def get_system_stats(self, query):
+        """
+        Collect high-level system statistics from vManage. You must
+        supply a specific query that identifies which data to collect.
+        """
+        return self._req(
+            "dataservice/statistics/system/", method="post", jsonbody=query
         )
 
     #

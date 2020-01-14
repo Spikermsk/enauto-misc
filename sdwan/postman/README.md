@@ -19,7 +19,8 @@ You can add custom environments for your own networks as you see fit.
 ## Copyright
 Copyright 2020 Nicholas Russo.
 
-Consumers may download and edit this document for personal use only.
-Downloading and editing any document for redistribution is prohibited.
+Consumers may download and edit any document in this collection for personal
+use only. Downloading and editing any document in this collection for
+redistribution is prohibited.
 
 All rights reserved.

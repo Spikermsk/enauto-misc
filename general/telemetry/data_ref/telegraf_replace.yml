@@ -1,0 +1,6 @@
+telegraf:
+    # perform local build instead to capture new telegraf config
+    build: telegraf
+    # expose the gRPC port on telegraf (could use env var, but this is simpler)
+    ports: 
+        - 42518:42518

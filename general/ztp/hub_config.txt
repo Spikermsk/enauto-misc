@@ -1,0 +1,28 @@
+ip dhcp pool ZTP
+ network 192.168.0.0 255.255.255.0
+ default-router 192.168.0.1
+ domain-name njrusmc.net
+ dns-server 192.168.0.1
+ option 150 ip 192.168.0.1
+ option 67 ascii ztp.py
+!
+ip dns server
+ip host hub.njrusmc.net 192.168.0.1
+tftp-server unix:ztp.py alias ztp.py
+!
+interface Loopback0
+ ip address 10.0.0.1 255.255.255.255
+ ip ospf 1 area 0
+!
+interface Ethernet0/0
+ ip address 192.168.0.1 255.255.255.0
+!
+interface Tunnel100
+ ip address 172.16.100.1 255.255.255.0
+ no ip redirects
+ ip nhrp map multicast dynamic
+ ip nhrp network-id 100
+ ip ospf network point-to-multipoint
+ ip ospf 1 area 0
+ tunnel source Ethernet0/0
+ tunnel mode gre multipoint

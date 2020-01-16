@@ -1,0 +1,1241 @@
+{
+	"info": {
+		"_postman_id": "e2503f8c-f3de-422a-a28e-1bffa97d74b2",
+		"name": "Cisco DNAC for ENAUTO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication and General",
+			"item": [
+				{
+					"name": "Get token (modern)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/system/api/v1/auth/token",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get token (legacy)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/api/system/v1/auth/token",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"api",
+								"system",
+								"v1",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get async task status by task ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{api_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/task/75055583-d024-4a99-9950-01b50b93af6d",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"task",
+								"75055583-d024-4a99-9950-01b50b93af6d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get file by file ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/file/75055583-d024-4a99-9950-01b50b93af6d",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"file",
+								"75055583-d024-4a99-9950-01b50b93af6d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d1ba689d-65fb-4675-9975-8bf91eaa215f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8df79ab2-41d9-422f-977d-58039822975e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Network Discovery",
+			"item": [
+				{
+					"name": "Get global CLI credentials",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/global-credential?credentialSubType=CLI",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"global-credential"
+							],
+							"query": [
+								{
+									"key": "credentialSubType",
+									"value": "CLI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get global SNMPv2 read credential",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/global-credential?credentialSubType=SNMPV2_READ_COMMUNITY",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"global-credential"
+							],
+							"query": [
+								{
+									"key": "credentialSubType",
+									"value": "SNMPV2_READ_COMMUNITY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get global SNMPv2 write credentials",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/global-credential?credentialSubType=SNMPV2_WRITE_COMMUNITY",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"global-credential"
+							],
+							"query": [
+								{
+									"key": "credentialSubType",
+									"value": "SNMPV2_WRITE_COMMUNITY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start CDP-based discovery",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"using_cdp\",\n    \"discoveryType\": \"CDP\",\n    \"ipAddressList\": \"10.10.20.80\",\n    \"cdpLevel\": 1,\n    \"timeOut\": 1,\n    \"isAutoCdp\": true,\n    \"protocolOrder\": \"ssh\",\n    \"preferredMgmtIPMethod\": \"None\"\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/discovery",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"discovery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start IP-based discovery",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"nickrange10\",\n    \"discoveryType\": \"Range\",\n    \"ipAddressList\": \"10.10.20.80-10.10.20.85\",\n    \"timeOut\": 1,\n    \"protocolOrder\": \"ssh,telnet\",\n    \"preferredMgmtIPMethod\": \"None\"\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/discovery",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"discovery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get discovery status/result",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/discovery/disc_id",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"discovery",
+								"disc_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get discovered network devices",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/discovery/disc_id/network-device",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"discovery",
+								"disc_id",
+								"network-device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get network device details",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/discovery/network-device/device_id",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"discovery",
+								"network-device",
+								"device_id"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Template Programmer",
+			"item": [
+				{
+					"name": "Create project",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "{{api_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"postman_proj\",\n    \"description\": \"testing some postman requests\"\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/system/api/v1/template-programmer/project",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"template-programmer",
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create simple template",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"simple_temp\",\n    \"composite\": false,\n    \"deviceTypes\": [\n        {\n            \"productFamily\": \"Switches and Hubs\",\n            \"productSeries\": \"Cisco Catalyst 9300 Series Switches\",\n            \"productType\": \"Cisco Catalyst 9300 Switch\"\n        }\n    ],\n    \"softwareType\": \"IOS-XE\",\n    \"templateContent\": \"hostname $hostname\\nip ssh version $ssh_ver\",\n    \"templateParams\": [\n        {\n            \"parameterName\": \"hostname\",\n            \"dataType\": \"STRING\",\n            \"required\": true,\n            \"order\": 1\n        },\n        {\n            \"parameterName\": \"ssh_ver\",\n            \"dataType\": \"INTEGER\",\n            \"required\": true,\n            \"order\": 2\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/system/api/v1/template-programmer/project/proj_id/template",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"template-programmer",
+								"project",
+								"proj_id",
+								"template"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create complex template",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"complex_temp\",\n    \"composite\": false,\n    \"deviceTypes\": [\n        {\n            \"productFamily\": \"Switches and Hubs\",\n            \"productSeries\": \"Cisco Catalyst 9300 Series Switches\",\n            \"productType\": \"Cisco Catalyst 9300 Switch\"\n        }\n    ],\n    \"softwareType\": \"IOS-XE\",\n    \"templateContent\": \"MAKE THIS CRAZIER\",\n    \"templateParams\": [\n        {\n            \"parameterName\": \"hostname\",\n            \"dataType\": \"STRING\",\n            \"required\": true,\n            \"order\": 1\n        },\n        {\n            \"parameterName\": \"ssh_ver\",\n            \"dataType\": \"INTEGER\",\n            \"required\": true,\n            \"order\": 2\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/system/api/v1/template-programmer/project/proj_id/template",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"template-programmer",
+								"project",
+								"proj_id",
+								"template"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Render (preview) template",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\",\n        \"ssh_ver\": 2\n    },\n    \"templateId\": \"template_id_here\"\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/system/api/v1/template-programmer/template/preview",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"template-programmer",
+								"template",
+								"preview"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Command Runner",
+			"item": [
+				{
+					"name": "Get Catalyst 9300 switches only",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/network-device?family=Switches and Hubs&type=Cisco Catalyst 9300 Switch",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device"
+							],
+							"query": [
+								{
+									"key": "family",
+									"value": "Switches and Hubs"
+								},
+								{
+									"key": "type",
+									"value": "Cisco Catalyst 9300 Switch"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Execute commands on healthy switches",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"commands\": [\n        \"show inventory\",\n        \"show version\",\n        \"show badstuff\"\n    ],\n    \"deviceUuids\": [\n        \"\",\n        \"\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/network-device-poller/cli/read-request",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device-poller",
+								"cli",
+								"read-request"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Event Notification",
+			"item": [
+				{
+					"name": "Get assurance events",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/events?tags=ASSURANCE",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"events"
+							],
+							"query": [
+								{
+									"key": "tags",
+									"value": "ASSURANCE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create webhook subscription for events",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"webhook_test\",\n        \"subscriptionEndpoints\": [\n            {\n                \"subscriptionDetails\": {\n                    \"connectorType\": \"REST\",\n                    \"name\": \"webhook.site\",\n                    \"description\": \"Great for testing\",\n                    \"method\": \"POST\",\n                    \"url\": \"https://webhook.site/885c4fbb-eda9-4d60-a2fb-010d2bde776f\"\n                }\n            }\n        ],\n        \"filter\": {\n            \"eventIds\": [\n                \"\",\n                \"\"\n            ]\n        }\n    }\n]"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/event/subscription",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"event",
+								"subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get event status",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}//dna/intent/api/v1/event/api-status/93f2b7c7-bd2e-45af-81a9-a572a63ff19d",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"",
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"event",
+								"api-status",
+								"93f2b7c7-bd2e-45af-81a9-a572a63ff19d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create all webhook subscriptions",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/event/subscription",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"event",
+								"subscription"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Assurance",
+			"item": [
+				{
+					"name": "Get current network health",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/system/api/v1/network-health?timestamp={{$timestamp}}000",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"network-health"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "{{$timestamp}}000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current site health",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/system/api/v1/site-health?timestamp={{$timestamp}}000",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"site-health"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "{{$timestamp}}000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current client health",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{dnac}}/dna/system/api/v1/client-health?timestamp={{$timestamp}}000",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"client-health"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "{{$timestamp}}000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Site Management",
+			"item": [],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3bcb956a-d565-43d9-b7c4-4ef8e2b39ac6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "acffef8f-ce82-4daf-affc-01e958e7dc6c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

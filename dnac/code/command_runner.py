@@ -21,8 +21,8 @@ def main():
         host="10.10.20.85", username="admin", password="Cisco1234!", verify=False
     )
 
-    # Collect the list of routers using query parameters. Specifically,
-    # we only want distribution switches (one of them is currently down)
+    # Collect the list of switches using query parameters. Specifically,
+    # we only want Catalyst 9300s because we know our template will work
     search_params = {
         "family": "Switches and Hubs",
         "type": "Cisco Catalyst 9300 Switch",

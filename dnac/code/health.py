@@ -36,7 +36,7 @@ def main():
     params = {"timestamp": current_epoch}
 
     for health in ["network", "site", "client"]:
-        health_resp = dnac.req(f"dna/system/api/v1/{health}-health", params=params)
+        health_resp = dnac.req(f"dna/intent/api/v1/{health}-health", params=params)
 
         with open(f"{health_dir}/get_{health}_health.json", "w") as handle:
             json.dump(health_resp.json(), handle, indent=2)

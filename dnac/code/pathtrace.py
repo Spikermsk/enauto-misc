@@ -17,7 +17,7 @@ def main():
     # Create a DNARequester object with our sandbox parameters
     dnac = DNACRequester(
         # host="sandboxdnac2.cisco.com", username="devnetuser", password="Cisco123!", verify=False
-        host="sandboxdnac2.cisco.com",
+        host="10.10.20.85",
         username="admin",
         password="Cisco1234!",
         verify=False,

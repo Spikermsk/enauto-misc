@@ -24,7 +24,6 @@ basics:
     form editor:
       - where you build the template
       - example:
-        hostname $hostname
         #if($ntp_logging == "true")
         ntp logging
         #else

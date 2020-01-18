@@ -58,6 +58,98 @@
 					},
 					"response": [
 						{
+							"name": "Failure",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/system/api/v1/auth/token",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"system",
+										"api",
+										"v1",
+										"auth",
+										"token"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 12:13:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Authentication has failed. Please provide valid credentials.\"\n}"
+						},
+						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -3052,6 +3144,414 @@
 					},
 					"response": [
 						{
+							"name": "Failure; missing mandatory data",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\"\n    },\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"preview"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 11:46:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\",\n    \"cliPreview\": \"hostname ROUTER1\\nip ssh version $ssh_ver\",\n    \"deviceId\": null,\n    \"validationErrors\": [\n        {\n            \"type\": \"DATA_MISSING\",\n            \"message\": \"Mandatory param missing ssh_ver\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Failure; missing template ID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\",\n        \"ssh_ver\": \"two\"\n    }\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"preview"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 11:47:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"templateId\": null,\n    \"cliPreview\": null,\n    \"deviceId\": null,\n    \"validationErrors\": [\n        {\n            \"type\": \"INVALID_DATA\",\n            \"message\": \"errorId=19,componentName=CRUD attributeValue is null. Expecting  unique not null value.\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Failure; extra data",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\",\n        \"extra\": \"yup\",\n        \"ssh_ver\": 2\n    },\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"preview"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 11:48:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\",\n    \"cliPreview\": null,\n    \"deviceId\": null,\n    \"validationErrors\": [\n        {\n            \"type\": \"INVALID_DATA\",\n            \"message\": null\n        }\n    ]\n}"
+						},
+						{
+							"name": "Failure; wrong data type",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\",\n        \"ssh_ver\": \"two\"\n    },\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"preview"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 11:47:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"templateId\": \"b36a7798-63a9-4551-9732-d35c672a69dd\",\n    \"cliPreview\": null,\n    \"deviceId\": null,\n    \"validationErrors\": [\n        {\n            \"type\": \"INVALID_DATA\",\n            \"message\": \"NCTP10031: Integer value is not passed to parameter ssh_ver\"\n        }\n    ]\n}"
+						},
+						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "PUT",
@@ -3189,10 +3689,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"complex_temp\",\n    \"composite\": false,\n    \"deviceTypes\": [\n        {\n            \"productFamily\": \"Switches and Hubs\",\n            \"productSeries\": \"Cisco Catalyst 9300 Series Switches\",\n            \"productType\": \"Cisco Catalyst 9300 Switch\"\n        }\n    ],\n    \"softwareType\": \"IOS-XE\",\n    \"templateContent\": \"#if($ntp_logging == \\\"true\\\")\\nntp logging\\n#else\\nno ntp logging\\n#end\\n#foreach($s in $ntp_servers)\\nntp server$s\\n#end\",\n    \"templateParams\": [\n    \t{\n            \"parameterName\": \"ntp_servers\",\n            \"dataType\": \"STRING\",\n            \"required\": true,\n            \"order\": 2,\n            \"selection\": {\n                \"selectionType\": \"MULTI_SELECT\",\n                \"selectionValues\": {\n                    \"s1\": \"203.0.113.1\",\n                    \"s2\": \"203.0.113.2\"\n                },\n                \"defaultSelectedValues\": [\n                    \"s1\",\n                    \"s2\"\n                ]\n            },\n            \"paramArray\": true\n        },\n        {\n            \"parameterName\": \"ntp_logging\",\n            \"dataType\": \"STRING\",\n            \"required\": true,\n            \"order\": 1\n        }\n    ]\n}"
+							"raw": "{\n    \"name\": \"complex_temp\",\n    \"composite\": false,\n    \"deviceTypes\": [\n        {\n            \"productFamily\": \"Switches and Hubs\",\n            \"productSeries\": \"Cisco Catalyst 9300 Series Switches\",\n            \"productType\": \"Cisco Catalyst 9300 Switch\"\n        }\n    ],\n    \"softwareType\": \"IOS-XE\",\n    \"templateContent\": \"#if($ntp_logging == \\\"true\\\")\\nntp logging\\n#else\\nno ntp logging\\n#end\\n#foreach($s in $ntp_servers)\\nntp server $s\\n#end\",\n    \"templateParams\": [\n    \t{\n            \"parameterName\": \"ntp_servers\",\n            \"dataType\": \"STRING\",\n            \"required\": true,\n            \"order\": 2,\n            \"selection\": {\n                \"selectionType\": \"MULTI_SELECT\",\n                \"selectionValues\": {\n                    \"s1\": \"203.0.113.1\",\n                    \"s2\": \"203.0.113.2\"\n                },\n                \"defaultSelectedValues\": [\n                    \"s1\",\n                    \"s2\"\n                ]\n            },\n            \"paramArray\": true\n        },\n        {\n            \"parameterName\": \"ntp_logging\",\n            \"dataType\": \"STRING\",\n            \"required\": true,\n            \"order\": 1\n        }\n    ]\n}"
 						},
 						"url": {
-							"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/project/proj_id/template",
+							"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/project/7656b198-e0d6-49c6-8ed1-bfa98f46a54a/template",
 							"protocol": "https",
 							"host": [
 								"{{dnac}}"
@@ -3204,7 +3704,7 @@
 								"v1",
 								"template-programmer",
 								"project",
-								"proj_id",
+								"7656b198-e0d6-49c6-8ed1-bfa98f46a54a",
 								"template"
 							]
 						}
@@ -3452,7 +3952,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"params\": {\n        \"hostname\": \"ROUTER1\",\n        \"ssh_ver\": 2\n    },\n    \"templateId\": \"ed52f79e-e391-4685-922a-77e3f34f20e2\"\n}"
+							"raw": "{\n    \"params\": {\n        \"ntp_servers\": [\n            \"203.0.113.1\",\n            \"203.0.113.2\"\n        ],\n        \"ntp_logging\": \"true\"\n    },\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\"\n}"
 						},
 						"url": {
 							"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
@@ -3473,7 +3973,7 @@
 					},
 					"response": [
 						{
-							"name": "Success",
+							"name": "Success: if statement true",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [
@@ -3495,7 +3995,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"params\": {\n        \"ntp_servers\": [\n            \"203.0.113.1\",\n            \"203.0.113.2\"\n        ],\n        \"ntp_logging\": \"true\"\n    },\n    \"templateId\": \"3b54acd7-3a4e-4289-b25b-ff85bfe9f6e9\"\n}"
+									"raw": "{\n    \"params\": {\n        \"ntp_servers\": [\n            \"203.0.113.1\",\n            \"203.0.113.2\"\n        ],\n        \"ntp_logging\": \"true\"\n    },\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\"\n}"
 								},
 								"url": {
 									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
@@ -3532,15 +4032,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 17 Jan 2020 00:38:44 GMT"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "JSESSIONID=mpunbnzd87jjqyd42bninqnx;Path=/; Secure; HttpOnly; SameSite=Strict"
-								},
-								{
-									"key": "Expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+									"value": "Sat, 18 Jan 2020 12:18:13 GMT"
 								},
 								{
 									"key": "Server",
@@ -3580,12 +4072,114 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"templateId\": \"3b54acd7-3a4e-4289-b25b-ff85bfe9f6e9\",\n    \"cliPreview\": \"ntp logging\\nntp server203.0.113.1\\nntp server203.0.113.2\\n\",\n    \"deviceId\": null,\n    \"validationErrors\": []\n}"
+							"body": "{\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\",\n    \"cliPreview\": \"ntp logging\\nntp server 203.0.113.1\\nntp server 203.0.113.2\\n\",\n    \"deviceId\": null,\n    \"validationErrors\": []\n}"
+						},
+						{
+							"name": "Success: if statement false",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"params\": {\n        \"ntp_servers\": [\n            \"203.0.113.1\",\n            \"203.0.113.2\"\n        ],\n        \"ntp_logging\": \"false\"\n    },\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/preview",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"preview"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2020 12:18:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "webserver"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\",\n    \"cliPreview\": \"no ntp logging\\nntp server 203.0.113.1\\nntp server 203.0.113.2\\n\",\n    \"deviceId\": null,\n    \"validationErrors\": []\n}"
 						}
 					]
 				}
 			],
-			"description": "Create and render configuration templates",
+			"description": "Create and render configuration templates. First, create a project, then use the project ID to create templates inside. Then, preview (render) each template by supplying the template ID and the required parameters (variables).",
 			"event": [
 				{
 					"listen": "prerequest",

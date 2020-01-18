@@ -5,13 +5,6 @@ Set of topics to review. One note file for each.
 4 courses, 90 minutes each. **MUST** watch all 3 DEVASC courses before starting.
 Meraki course may run short, first one may run long. Each module 20-30 minutes.
 
-1. Managing and Monitoring Networks using Simple Automation Tools
-    (framed as continuation to plug gaps, focus on enterprise, low budget/quick start)
-  - Utilizing Netmiko to Automate Cisco Enterprise Devices (CSR/ASAv)
-  - Exploring YANG Visualization Tools (feedback from others)
-  - Migrating from CLI-driven to Model-driven Programmability (focus on migration)
-  - Building a Model-driven Telemetry System using the TIG Stack
-
 2. Automating Cisco DNA Center Operations using APIs
   - Getting Started with DNA Center Device Management (includes provisioning methods)
   - Employing the DNA Center Command Runner and Template APIs

@@ -6,6 +6,7 @@ Purpose: Demonstrate how to use the template programmer tool on
 Cisco DNA center via API calls.
 """
 
+import os
 import json
 from dnac_requester import DNACRequester
 
@@ -32,41 +33,48 @@ def main():
     proj_task = dnac.wait_for_task(proj_resp.json()["response"]["taskId"])
     proj_id = proj_task.json()["response"]["data"]
 
-    # Load in the complex template body, then create a template based on it
-    with open("template_body.json", "r") as handle:
-        temp_body = json.load(handle)
-    temp_resp = dnac.req(
-        f"dna/intent/api/v1/template-programmer/project/{proj_id}/template",
-        method="post",
-        jsonbody=temp_body,
-    )
+    # Load in the various template bodies, then create a template based on each
+    for template in os.listdir("templates"):
+        with open(f"templates/{template}", "r") as handle:
+            temp_data = json.load(handle)
+        temp_resp = dnac.req(
+            f"dna/intent/api/v1/template-programmer/project/{proj_id}/template",
+            method="post",
+            jsonbody=temp_data["body"],
+        )
 
-    # Wait for task to finish, but don't care about data (only error checks)
-    temp_task = dnac.wait_for_task(temp_resp.json()["response"]["taskId"])
-    temp_id = temp_task.json()["response"]["data"]
+        # Wait for task to finish, and capture the "data" value, which is
+        # the template ID
+        temp_task = dnac.wait_for_task(temp_resp.json()["response"]["taskId"])
+        temp_id = temp_task.json()["response"]["data"]
 
-    # Start a simulation (aka preview)
-    prev_body = {
-        "params": {"hostname": "ROUTER1", "ssh_ver": 2},
-        "templateId": temp_id,
-    }
-    prev_resp = dnac.req(
-        f"dna/intent/api/v1/template-programmer/template/preview",
-        method="put",
-        jsonbody=prev_body,
-        raise_for_status=False,
-    )
+        # Start a simulation (aka preview) to render the template. First,
+        # build the body by combining the sample variables and template ID
+        prev_body = {"params": temp_data["params"], "templateId": temp_id}
 
-    # In this rare case, code 500 is acceptable as this usually
-    # indicates the specific template error. All other errors
-    # should crash the program
-    prev_data = prev_resp.json()
-    if prev_resp.ok:
-       print(prev_data["cliPreview"])
-    elif prev_resp.status_code == 500:
-        print(f"Template error: {prev_data['response']['message']}")
-    else:
-        prev_resp.raise_for_status()
+        # Then, issue the HTTP PUT request to begin the previous without
+        # raising an HTTPError if the status code >= 400
+        prev_resp = dnac.req(
+            f"dna/intent/api/v1/template-programmer/template/preview",
+            method="put",
+            jsonbody=prev_body,
+        )
+        prev_data = prev_resp.json()
+
+        # If any validation errors exist, print them out. These include using
+        # the wrong data type, omitted required variables, wrong template IDs,
+        # and more
+        print(f"\nChecking template {template}:")
+        if prev_data["validationErrors"]:
+            print(f"Errors:")
+            for error in prev_data["validationErrors"]:
+                print(f"{error['type']}: {error['message']}")
+
+        # The simulation succeeded, so print the rendered text after
+        # variable substitution has taken place
+        else:
+            print(f"Snippet rendered:")
+            print(prev_data["cliPreview"])
 
 
 if __name__ == "__main__":

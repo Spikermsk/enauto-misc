@@ -14,10 +14,10 @@
 
 ## m3: Utilizing Netmiko to Automate Cisco Enterprise Devices (25m)
 1. Understanding the Core Network Automation Concepts
-2. Demo: Collecting Device State with Netmiko
-3. Demo: Configuring DMVPN Tunnels with Netmiko via Static Files
+2. Demo: Collecting the Initial WAN Health with Netmiko
+3. Demo: Configuring OSPF Features with Netmiko via Static Files
 4. Assembling Flexible Configuration Templates with Jinja2
-5. Demo: Configuring DMVPN Tunnels with Netmiko via Jinja2 Templates
+5. Demo: Configuring OSPF Features with Netmiko via Jinja2 Templates
 6. Demo: Preparing for Network OS Upgrades with Netmiko
 7. Module Summary
 
@@ -25,7 +25,7 @@
 1. Introducing Ansible for Network Automation
 2. Demo: Ansible Installation and Auxiliary File Creation
 3. Demo: Collecting Device State with Ansible
-4. Demo: Configuring DMVPN Tunnels with Ansible
+4. Demo: Configuring and Verifying OSPF Features with Ansible
 5. Module Summary
 
 ## m5: Migrating from CLI-driven to Model-driven Programmability (20m)
@@ -33,12 +33,12 @@
 2. Demo: Exploring YANG models with Cisco DevNet's yangexplorer
 3. Demo: Exploring YANG models with Advanced NETCONF Explorer (anx)
 4. Planning a Migration from Command-driven to Model-driven Automation
-5. Demo: Migrating the DMVPN Hub to NETCONF using Python ncclient
+5. Demo: Migrating the Hub Site to NETCONF using Python ncclient
 6. Module Summary
 
 ## m6: Building a Model-driven Telemetry System using the TIG Stack (30m)
 1. Introducing the Telegraf, Influxdb, and Grafana (TIG) Stack
-2. Demo: Setting up the TIG Stack Environment
+2. Demo: Preparing to Deploy the TIG Stack
 3. Demo: Starting a new TIG Stack Container
 4. Demo: Exploring the CPU and CDP Operational YANG Models
 5. Demo: Configuring gRPC Dial-out Connections via CLI

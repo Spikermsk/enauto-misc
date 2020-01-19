@@ -7,6 +7,7 @@ Purpose: Demonstrate using SSH via netmiko to configure network devices.
 
 from yaml import safe_load
 from netmiko import Netmiko
+from jinja2 import Environment, FileSystemLoader
 
 
 def main():
@@ -18,12 +19,19 @@ def main():
     with open("hosts.yml", "r") as handle:
         host_root = safe_load(handle)
 
-    # Load the static configuration snippet
-    with open("templates/routing.txt", "r") as handle:
-        new_config = handle.read()
+    # Load the generic variables for all devices outside of the loop
+    with open("vars/inputs.yml", "r") as handle:
+        data = safe_load(handle)
 
     # Iterate over the list of hosts (list of dictionaries)
     for host in host_root["host_list"]:
+
+        # Setup the jinja2 templating environment and render the template
+        j2_env = Environment(
+            loader=FileSystemLoader("."), trim_blocks=True, autoescape=True
+        )
+        template = j2_env.get_template("templates/routing.j2")
+        new_config = template.render(data=data)
 
         # Create netmiko SSH connection handler to access the device
         conn = Netmiko(

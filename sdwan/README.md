@@ -7,12 +7,14 @@
 3. Demo: Building a Feature-rich SDK To Encapsulate SD-WAN Operations
 4. Demo: Writing a Generalized Information Collection Method
 5. Demo: Collecting a List of SD-WAN Inventory Devices
+6. Module Summary
 
 ## m3: Building and Applying vSmart Device Templates (25m)
 1. Understanding Feature and Device Templates
 2. Detour: Using Google Chrome to Understand the SD-WAN API Calls
 3. Demo: Building a vSmart Device Template based on Factory Defaults
 4. Demo: Attaching a vSmart Device Template to vSmart Controllers
+5. Module Summary
 
 ## m4: Applying and Updating Dynamic vSmart Routing Policies (20m)
 1. High-level SD-WAN Policy Structure
@@ -20,6 +22,7 @@
 3. Demo: Creating vSmart Topology and Approute Objects
 4. Demo: Creating vSmart Approute Objects and vSmart Policy
 5. Demo: Activating the New vSmart Routing Policy
+6. Module Summary
 
 ## m5: Monitoring and Troubleshooting the SD-WAN Fabric (25m)
 1. Understanding the Various Troubleshooting APIs

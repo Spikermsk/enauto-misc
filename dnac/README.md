@@ -8,24 +8,27 @@
 4. Demo: Creating New Sites and Assigning Devices
 5. Understanding Dynamic Network Discoveries
 6. Demo: Performing Network Discoveries
+7. Module Summary
  
 ## m3: Managing Device Configurations (20m)
 1. Introducing DNA Center Templates and the Velocity Template Language (VTL)
 2. Demo: Developing VTL Templates without DNA Center
 3. Demo: Writing a Python Script to Create and Render Templates
 4. Demo: Executing and Reviewing Template Creation and Rendering
+5. Module Summary
 
 ## m4: Troubleshooting Network Problems (20m)
 1. Centralized CLI Access using DNA Center
 2. Demo: Running Arbitrary Commands using the Command Runner
 3. Going Deeper than Traceroute
 4. Demo: Surfacing Complex Network Problems using Path Trace
+5. Module Summary
 
 ## m5: Monitoring Network Health and Behavior (20m)
 1. Understanding DNA Center Assurance
 2. Demo: Collecting Site, Network, and Client Health
 3. Deploying Event-driven management using Webhooks
-4. Demo: Setting up a Simple Webhook Listener
+4. Demo: Setting up a Simple Webhook Listener using webhook.site
 5. Demo: Configuring Assurance Event Notifications
 6. Course Summary and Homework Challenges
   - Try retooling every script using the official DNA center SDK

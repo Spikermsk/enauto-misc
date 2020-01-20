@@ -36,7 +36,7 @@ def main(org_name, net_name):
         org_id = new_org["id"]
 
         # The network cannot possibly exist, so also create the network
-        body = {"name": net_name, "type": "appliance"}
+        body = {"name": net_name, "type": "wireless"}
         new_net = req(
             f"/organizations/{org_id}/networks", method="post", json=body
         ).json()

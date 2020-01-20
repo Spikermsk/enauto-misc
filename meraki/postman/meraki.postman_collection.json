@@ -328,7 +328,7 @@
 					]
 				},
 				{
-					"name": "Get networks from DevNet org",
+					"name": "Get networks within organization",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -484,6 +484,634 @@
 							"body": "[\n    {\n        \"id\": \"L_646829496481104079\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DevNet Sandbox Always on READ ONLY\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"appliance\",\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"L_646829496481104109\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DEVCOR Network\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": \" tag1 tag2 \",\n        \"productTypes\": [\n            \"appliance\",\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"N_646829496481160294\",\n        \"organizationId\": \"549236\",\n        \"name\": \"Test-MX-Hub\",\n        \"timeZone\": \"America/Toronto\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"appliance\"\n        ],\n        \"type\": \"appliance\",\n        \"disableMyMerakiCom\": true,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"N_646829496481160295\",\n        \"organizationId\": \"549236\",\n        \"name\": \"Test-MX-Spoke\",\n        \"timeZone\": \"America/Toronto\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"appliance\"\n        ],\n        \"type\": \"appliance\",\n        \"disableMyMerakiCom\": true,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"N_646829496481160296\",\n        \"organizationId\": \"549236\",\n        \"name\": \"Test-MX-Hub_2\",\n        \"timeZone\": \"America/Chicago\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"appliance\"\n        ],\n        \"type\": \"appliance\",\n        \"disableMyMerakiCom\": true,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"L_646829496481104276\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DNENT1-michael.hammond@team.wrike.com\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"L_646829496481104277\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DNSMB2\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"appliance\",\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"L_646829496481104279\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DNENT3-brian.kelley@team.wrike.com\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"L_646829496481104282\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DNENT2-hagopiant@Michigan.gov\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"camera\",\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"L_646829496481104286\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DNSMB1-Kenny.Peng@BSWHealth.org-daklinge@cisco.com\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"L_646829496481104290\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DNSMB4-njrusmc@gmail.com\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"L_646829496481104291\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DNSMB5\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"appliance\",\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    },\n    {\n        \"id\": \"L_646829496481104292\",\n        \"organizationId\": \"549236\",\n        \"name\": \"DNSMB3\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": null,\n        \"productTypes\": [\n            \"appliance\",\n            \"switch\",\n            \"wireless\"\n        ],\n        \"type\": \"combined\",\n        \"disableMyMerakiCom\": false,\n        \"disableRemoteStatusPage\": true\n    }\n]"
 						}
 					]
+				},
+				{
+					"name": "Create organization",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"type": "text",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"home_org\"\n}"
+						},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/organizations",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"organizations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure; lack of permissions",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"home_org\"\n}"
+								},
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/organizations",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"organizations"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 11:53:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "2b54a17972aa036b48b637dffd6e51ed"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.106653"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": " "
+						}
+					]
+				},
+				{
+					"name": "Create wireless network",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"type": "text",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"home_wireless_net\",\n    \"type\": \"wireless\"\n}"
+						},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/organizations/549236/networks",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"organizations",
+								"549236",
+								"networks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure; lack of permissions",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"home_wireless_net\",\n    \"type\": \"wireless\"\n}"
+								},
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/organizations/549236/networks",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"organizations",
+										"549236",
+										"networks"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 11:59:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "1f7a4ab83af22ff9aad8ccdf1cfbee44"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.079926"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": " "
+						}
+					]
+				},
+				{
+					"name": "Create camera network",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"type": "text",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"home_camera_net\",\n    \"type\": \"camera\"\n}"
+						},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/organizations/549236/networks",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"organizations",
+								"549236",
+								"networks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure; lack of permissions",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"home_camera_net\",\n    \"type\": \"camera\"\n}"
+								},
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/organizations/549236/networks",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"organizations",
+										"549236",
+										"networks"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:01:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "204bbe6cd52285d6f9545ce96fdd3964"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.134465"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": " "
+						}
+					]
+				},
+				{
+					"name": "Create combined network",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"type": "text",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"home_net\",\n    \"type\": \"combined\",\n    \"productTypes\": [\n        \"wireless\",\n        \"camera\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/organizations/549236/networks",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"organizations",
+								"549236",
+								"networks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure; lack of permissions",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"home_net\",\n    \"type\": \"combined\",\n    \"productTypes\": [\n        \"wireless\",\n        \"camera\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/organizations/549236/networks",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"organizations",
+										"549236",
+										"networks"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:03:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "d887850cde899c5dc6ce46506c60e0a5"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.080798"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": " "
+						}
+					]
 				}
 			],
 			"event": [
@@ -560,7 +1188,7 @@
 					},
 					"response": [
 						{
-							"name": "Already exists",
+							"name": "Failure: Already exists",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -662,7 +1290,7 @@
 							"body": "{\n    \"errors\": [\n        \"Url An HTTP server with this URL already exists\"\n    ]\n}"
 						},
 						{
-							"name": "Bad body",
+							"name": "Failure: bad body",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -914,214 +1542,6 @@
 					},
 					"response": [
 						{
-							"name": "Already exists",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Cisco-Meraki-API-Key",
-										"type": "text",
-										"value": "{{api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \n  \"name\": \"fredsted\",\n  \"url\": \"https://webhook.site/885c4fbb-eda9-4d60-a2fb-010d2bde776f\",\n  \"sharedSecret\": \"denmark\"\n}"
-								},
-								"url": {
-									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/httpServers",
-									"protocol": "https",
-									"host": [
-										"dashboard",
-										"meraki",
-										"com"
-									],
-									"path": [
-										"api",
-										"v0",
-										"networks",
-										"L_646829496481104290",
-										"httpServers"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 14 Jan 2020 12:22:57 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "sameorigin"
-								},
-								{
-									"key": "X-Robots-Tag",
-									"value": "none"
-								},
-								{
-									"key": "X-UA-Compatible",
-									"value": "IE=Edge,chrome=1"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "1010c6e2d1a0fd3d94574ee0c872a6d4"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.146050"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"errors\": [\n        \"Url An HTTP server with this URL already exists\"\n    ]\n}"
-						},
-						{
-							"name": "Success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Cisco-Meraki-API-Key",
-										"type": "text",
-										"value": "{{api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \n  \"name\": \"fredsted\",\n  \"url\": \"https://webhook.site/885c4fbb-eda9-4d60-a2fb-010d2bde776f\",\n  \"sharedSecret\": \"denmark\"\n}"
-								},
-								"url": {
-									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/httpServers",
-									"protocol": "https",
-									"host": [
-										"dashboard",
-										"meraki",
-										"com"
-									],
-									"path": [
-										"api",
-										"v0",
-										"networks",
-										"L_646829496481104290",
-										"httpServers"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 14 Jan 2020 12:21:02 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "sameorigin"
-								},
-								{
-									"key": "X-Robots-Tag",
-									"value": "none"
-								},
-								{
-									"key": "X-UA-Compatible",
-									"value": "IE=Edge,chrome=1"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "9e4c36a7980f4ea69047850fb30009ec"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.483534"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"name\": \"fredsted\",\n    \"url\": \"https://webhook.site/885c4fbb-eda9-4d60-a2fb-010d2bde776f\",\n    \"sharedSecret\": \"denmark\",\n    \"id\": \"aHR0cHM6Ly93ZWJob29rLnNpdGUvODg1YzRmYmItZWRhOS00ZDYwLWEyZmItMDEwZDJiZGU3NzZm\",\n    \"networkId\": \"L_646829496481104290\"\n}"
-						},
-						{
 							"name": "Success",
 							"originalRequest": {
 								"method": "GET",
@@ -1230,108 +1650,6 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"name\": \"fredsted\",\n        \"url\": \"https://webhook.site/885c4fbb-eda9-4d60-a2fb-010d2bde776f\",\n        \"sharedSecret\": \"denmark\",\n        \"id\": \"aHR0cHM6Ly93ZWJob29rLnNpdGUvODg1YzRmYmItZWRhOS00ZDYwLWEyZmItMDEwZDJiZGU3NzZm\",\n        \"networkId\": \"L_646829496481104290\"\n    }\n]"
-						},
-						{
-							"name": "Bad body",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "X-Cisco-Meraki-API-Key",
-										"type": "text",
-										"value": "{{api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \n  \"name\": \"fredsted123\",\n  \"sharedSecret\": \"denmark\"\n}"
-								},
-								"url": {
-									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/httpServers",
-									"protocol": "https",
-									"host": [
-										"dashboard",
-										"meraki",
-										"com"
-									],
-									"path": [
-										"api",
-										"v0",
-										"networks",
-										"L_646829496481104290",
-										"httpServers"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 14 Jan 2020 12:22:16 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "sameorigin"
-								},
-								{
-									"key": "X-Robots-Tag",
-									"value": "none"
-								},
-								{
-									"key": "X-UA-Compatible",
-									"value": "IE=Edge,chrome=1"
-								},
-								{
-									"key": "X-Request-Id",
-									"value": "64b6a5db4ffe18838cdb8ba548cec23a"
-								},
-								{
-									"key": "X-Runtime",
-									"value": "0.159828"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"errors\": [\n        \"The following required parameters are missing: 'url'\"\n    ]\n}"
 						}
 					]
 				},
@@ -1383,7 +1701,7 @@
 					},
 					"response": [
 						{
-							"name": "Bad body",
+							"name": "Failure: bad body",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -1647,7 +1965,7 @@
 					},
 					"response": [
 						{
-							"name": "Not found",
+							"name": "Failure: not found",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -1867,7 +2185,7 @@
 							"body": "{\n    \"id\": \"646829496481198964\",\n    \"url\": \"https://webhook.site/885c4fbb-eda9-4d60-a2fb-010d2bde776f\",\n    \"status\": \"delivered\"\n}"
 						},
 						{
-							"name": "Failure",
+							"name": "Failure: test abandoned",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -2033,7 +2351,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/devices",
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104282/devices",
 							"protocol": "https",
 							"host": [
 								"dashboard",
@@ -2044,12 +2362,123 @@
 								"api",
 								"v0",
 								"networks",
-								"L_646829496481104290",
+								"L_646829496481104282",
 								"devices"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success: ENT2 sandbox",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104282/devices",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104282",
+										"devices"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:34:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "b52245d3f185bc5a11f0d2e05927b8d9"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.174507"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"lat\": 37.4180951010362,\n        \"lng\": -122.098531723022,\n        \"address\": \"\",\n        \"serial\": \"Q2FV-TG7N-MF4E\",\n        \"mac\": \"34:56:fe:a2:58:83\",\n        \"lanIp\": null,\n        \"networkId\": \"L_646829496481104282\",\n        \"model\": \"MV12WE\",\n        \"firmware\": \"Not running configured version\",\n        \"floorPlanId\": null,\n        \"wirelessMac\": \"34:56:fe:a2:58:84\"\n    },\n    {\n        \"lat\": 37.4180951010362,\n        \"lng\": -122.098531723022,\n        \"address\": \"\",\n        \"serial\": \"Q2MD-Y5QK-LAK2\",\n        \"mac\": \"e0:cb:bc:51:28:f2\",\n        \"lanIp\": null,\n        \"networkId\": \"L_646829496481104282\",\n        \"model\": \"MR53\",\n        \"firmware\": \"Not running configured version\",\n        \"floorPlanId\": null\n    },\n    {\n        \"lat\": 37.4180951010362,\n        \"lng\": -122.098531723022,\n        \"address\": \"\",\n        \"serial\": \"Q2GW-2WW9-LLZC\",\n        \"mac\": \"34:56:fe:a5:8a:20\",\n        \"lanIp\": null,\n        \"networkId\": \"L_646829496481104282\",\n        \"model\": \"MS225-24P\",\n        \"switchProfileId\": null,\n        \"firmware\": \"Not running configured version\",\n        \"floorPlanId\": null\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Get camera recording schedules",
@@ -2076,7 +2505,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/camera/schedules",
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104282/camera/schedules",
 							"protocol": "https",
 							"host": [
 								"dashboard",
@@ -2087,13 +2516,125 @@
 								"api",
 								"v0",
 								"networks",
-								"L_646829496481104290",
+								"L_646829496481104282",
 								"camera",
 								"schedules"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success; ENT2 sandbox",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104282/camera/schedules",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104282",
+										"camera",
+										"schedules"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:35:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "f8d62201b07b5015ff576bd4aab1e604"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.181728"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
 				},
 				{
 					"name": "Get camera video link",
@@ -2120,7 +2661,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/cameras/SN/videoLink",
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104282/cameras/Q2FV-TG7N-MF4E/videoLink",
 							"protocol": "https",
 							"host": [
 								"dashboard",
@@ -2131,17 +2672,130 @@
 								"api",
 								"v0",
 								"networks",
-								"L_646829496481104290",
+								"L_646829496481104282",
 								"cameras",
-								"SN",
+								"Q2FV-TG7N-MF4E",
 								"videoLink"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success: ENT2 sandbox",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104282/cameras/Q2FV-TG7N-MF4E/videoLink",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104282",
+										"cameras",
+										"Q2FV-TG7N-MF4E",
+										"videoLink"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:36:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "445eee811eb855bdabaa993372fb266a"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.241172"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"https://n149.meraki.com/DNENT2-hagopiant/n/A8AEBavc/manage/nodes/new_list/57548243884163\"\n}"
+						}
+					]
 				},
 				{
-					"name": "Get snapshot from camera (optional timestamp)",
+					"name": "Get snapshot from current or specified time",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -2165,7 +2819,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/cameras/SN/snapshot",
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104282/cameras/Q2FV-TG7N-MF4E/snapshot",
 							"protocol": "https",
 							"host": [
 								"dashboard",
@@ -2176,21 +2830,138 @@
 								"api",
 								"v0",
 								"networks",
-								"L_646829496481104290",
+								"L_646829496481104282",
 								"cameras",
-								"SN",
+								"Q2FV-TG7N-MF4E",
 								"snapshot"
 							],
 							"query": [
 								{
 									"key": "timestamp",
-									"value": "",
+									"value": "2020-01-20T12:51:52+0000",
+									"description": "Desired snapshot time in ISO 8601 format",
 									"disabled": true
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Failure: ENT2 sandbox lack of permissions",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104282/cameras/Q2FV-TG7N-MF4E/snapshot",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104282",
+										"cameras",
+										"Q2FV-TG7N-MF4E",
+										"snapshot"
+									],
+									"query": [
+										{
+											"key": "timestamp",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:43:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "27e08ad75877d15d9779da94da9073de"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.231247"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": " "
+						}
+					]
 				},
 				{
 					"name": "Get quality and retention settings",
@@ -2217,7 +2988,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/devices/SN/camera/qualityAndRetentionSettings",
+							"raw": "https://dashboard.meraki.com/api/v0/devices/Q2FV-TG7N-MF4E/camera/qualityAndRetentionSettings",
 							"protocol": "https",
 							"host": [
 								"dashboard",
@@ -2228,13 +2999,125 @@
 								"api",
 								"v0",
 								"devices",
-								"SN",
+								"Q2FV-TG7N-MF4E",
 								"camera",
 								"qualityAndRetentionSettings"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success: ENT2 sandbox",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/devices/Q2FV-TG7N-MF4E/camera/qualityAndRetentionSettings",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"devices",
+										"Q2FV-TG7N-MF4E",
+										"camera",
+										"qualityAndRetentionSettings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:44:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "cb80e8df124589296030a501cb5498d8"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.285169"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"motionBasedRetentionEnabled\": false,\n    \"audioRecordingEnabled\": false,\n    \"restrictedBandwidthModeEnabled\": false,\n    \"profileId\": null,\n    \"quality\": \"Standard\",\n    \"resolution\": \"1280x720\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Update quality and retention settings",
@@ -2262,10 +3145,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"motionBasedRetentionEnabled\": false,\n  \"audioRecordingEnabled\": false,\n  \"restrictedBandwidthModeEnabled\": false,\n  \"profileId\": null,\n  \"quality\": \"Standard\",\n  \"resolution\": 720\n}"
+							"raw": "{\n  \"motionBasedRetentionEnabled\": false,\n  \"audioRecordingEnabled\": false,\n  \"restrictedBandwidthModeEnabled\": false,\n  \"profileId\": null,\n  \"quality\": \"Standard\",\n  \"resolution\": \"1280x720\"\n}"
 						},
 						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/devices/SN/camera/qualityAndRetentionSettings",
+							"raw": "https://dashboard.meraki.com/api/v0/devices/Q2FV-TG7N-MF4E/camera/qualityAndRetentionSettings",
 							"protocol": "https",
 							"host": [
 								"dashboard",
@@ -2276,13 +3159,228 @@
 								"api",
 								"v0",
 								"devices",
-								"SN",
+								"Q2FV-TG7N-MF4E",
 								"camera",
 								"qualityAndRetentionSettings"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Failure: ENT2 sandbox lack of permissions",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"motionBasedRetentionEnabled\": false,\n  \"audioRecordingEnabled\": false,\n  \"restrictedBandwidthModeEnabled\": false,\n  \"profileId\": null,\n  \"quality\": \"Standard\",\n  \"resolution\": \"1280x720\"\n}"
+								},
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/devices/Q2FV-TG7N-MF4E/camera/qualityAndRetentionSettings",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"devices",
+										"Q2FV-TG7N-MF4E",
+										"camera",
+										"qualityAndRetentionSettings"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:45:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "b84c3a76ffc5895d480a6b023575795e"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.163206"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": " "
+						},
+						{
+							"name": "Failure: bad body",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"motionBasedRetentionEnabled\": false,\n  \"audioRecordingEnabled\": false,\n  \"restrictedBandwidthModeEnabled\": false,\n  \"profileId\": null,\n  \"quality\": \"Standard\",\n  \"resolution\": \"1280x720\"\n}"
+								},
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/devices/Q2FV-TG7N-MF4E/camera/qualityAndRetentionSettings",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"devices",
+										"Q2FV-TG7N-MF4E",
+										"camera",
+										"qualityAndRetentionSettings"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:44:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "dc344c51265e6e974f326f7e38048f18"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.194161"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"'resolution' must be one of: '1280x720', '1920x1080', '1080x1080' or '2058x2058'\"\n    ]\n}"
+						}
+					]
 				}
 			],
 			"description": "API calls for Meraki MV Sense cameras. These do not currently exist in DevNet and will require actual hardware to test.",
@@ -2308,11 +3406,6 @@
 					}
 				}
 			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Location Scanning",
-			"item": [],
 			"protocolProfileBehavior": {}
 		},
 		{
@@ -2343,7 +3436,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/ssids",
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids",
 							"protocol": "https",
 							"host": [
 								"dashboard",
@@ -2354,7 +3447,7 @@
 								"api",
 								"v0",
 								"networks",
-								"L_646829496481104290",
+								"L_646829496481104291",
 								"ssids"
 							]
 						}
@@ -2473,12 +3566,12 @@
 					]
 				},
 				{
-					"name": "Add excap to SSID",
+					"name": "Get SSID 0",
 					"request": {
 						"auth": {
 							"type": "noauth"
 						},
-						"method": "PUT",
+						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
@@ -2496,12 +3589,8 @@
 								"value": "{{api_key}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"splashPage\": \"Click-through splash page\",\n    \"authMode\": \"open\",\n    \"adminSplashUrl\": \"http://51.1.1.1/index.html\",\n    \"walledGardenEnabled\": true,\n    \"walledGardenRanges\": \"51.1.1.1/32\"\n}"
-						},
 						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/ssids/0",
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0",
 							"protocol": "https",
 							"host": [
 								"dashboard",
@@ -2512,7 +3601,7 @@
 								"api",
 								"v0",
 								"networks",
-								"L_646829496481104290",
+								"L_646829496481104291",
 								"ssids",
 								"0"
 							]
@@ -2520,9 +3609,9 @@
 					},
 					"response": [
 						{
-							"name": "Success",
+							"name": "Success; external splash page",
 							"originalRequest": {
-								"method": "PUT",
+								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
@@ -2540,12 +3629,8 @@
 										"value": "{{api_key}}"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"splashPage\": \"Click-through splash page\",\n    \"authMode\": \"open\",\n    \"adminSplashUrl\": \"http://51.1.1.1/index.html\",\n    \"walledGardenEnabled\": true,\n    \"walledGardenRanges\": \"51.1.1.1/32\"\n}"
-								},
 								"url": {
-									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/ssids/0",
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0",
 									"protocol": "https",
 									"host": [
 										"dashboard",
@@ -2556,7 +3641,7 @@
 										"api",
 										"v0",
 										"networks",
-										"L_646829496481104290",
+										"L_646829496481104291",
 										"ssids",
 										"0"
 									]
@@ -2572,7 +3657,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 14 Jan 2020 12:55:17 GMT"
+									"value": "Mon, 20 Jan 2020 12:13:44 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -2616,11 +3701,11 @@
 								},
 								{
 									"key": "X-Request-Id",
-									"value": "7b3741decfb802a2b7472f0f78329311"
+									"value": "2601094f3e084def097aeaef2770da3c"
 								},
 								{
 									"key": "X-Runtime",
-									"value": "0.318652"
+									"value": "0.117610"
 								},
 								{
 									"key": "X-XSS-Protection",
@@ -2632,12 +3717,944 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"number\": 0,\n    \"name\": \"DNSMB4 - wireless WiFi\",\n    \"enabled\": true,\n    \"splashPage\": \"Click-through splash page\",\n    \"ssidAdminAccessible\": false,\n    \"authMode\": \"open\",\n    \"radiusAccountingEnabled\": null,\n    \"ipAssignmentMode\": \"NAT mode\",\n    \"adminSplashUrl\": null,\n    \"splashTimeout\": \"1440 minutes\",\n    \"walledGardenEnabled\": true,\n    \"walledGardenRanges\": \"51.1.1.1/32\",\n    \"minBitrate\": 11,\n    \"bandSelection\": \"Dual band operation\",\n    \"perClientBandwidthLimitUp\": 0,\n    \"perClientBandwidthLimitDown\": 0\n}"
+							"body": "{\n    \"number\": 0,\n    \"name\": \"DNSMB5 - wireless WiFi\",\n    \"enabled\": true,\n    \"splashPage\": \"Click-through splash page\",\n    \"ssidAdminAccessible\": false,\n    \"authMode\": \"open\",\n    \"radiusAccountingEnabled\": false,\n    \"ipAssignmentMode\": \"NAT mode\",\n    \"adminSplashUrl\": \"https://192.0.2.1/index.html\",\n    \"splashTimeout\": \"1440 minutes\",\n    \"walledGardenEnabled\": true,\n    \"walledGardenRanges\": \"192.0.2.1/32\",\n    \"minBitrate\": 11,\n    \"bandSelection\": \"Dual band operation\",\n    \"perClientBandwidthLimitUp\": 0,\n    \"perClientBandwidthLimitDown\": 0\n}"
+						},
+						{
+							"name": "Success; direct access",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104291",
+										"ssids",
+										"0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:11:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "509d16d9f43c51e16290cc592cbf835e"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.123956"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"number\": 0,\n    \"name\": \"DNSMB5 - wireless WiFi\",\n    \"enabled\": true,\n    \"splashPage\": \"None\",\n    \"ssidAdminAccessible\": false,\n    \"authMode\": \"open\",\n    \"radiusAccountingEnabled\": false,\n    \"ipAssignmentMode\": \"NAT mode\",\n    \"minBitrate\": 11,\n    \"bandSelection\": \"Dual band operation\",\n    \"perClientBandwidthLimitUp\": 0,\n    \"perClientBandwidthLimitDown\": 0\n}"
+						},
+						{
+							"name": "Success: basic click-through",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104291",
+										"ssids",
+										"0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:10:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "cf1a41751d04733610dc0c98cfd16a2a"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.132829"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"number\": 0,\n    \"name\": \"DNSMB5 - wireless WiFi\",\n    \"enabled\": true,\n    \"splashPage\": \"Click-through splash page\",\n    \"ssidAdminAccessible\": false,\n    \"authMode\": \"open\",\n    \"radiusAccountingEnabled\": false,\n    \"ipAssignmentMode\": \"NAT mode\",\n    \"adminSplashUrl\": null,\n    \"splashTimeout\": \"1440 minutes\",\n    \"walledGardenEnabled\": false,\n    \"minBitrate\": 11,\n    \"bandSelection\": \"Dual band operation\",\n    \"perClientBandwidthLimitUp\": 0,\n    \"perClientBandwidthLimitDown\": 0\n}"
 						}
 					]
 				},
 				{
-					"name": "Update splash settings",
+					"name": "Get SSID 0 splash settings",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"type": "text",
+								"value": "{{api_key}}"
+							}
+						],
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0/splashSettings",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"networks",
+								"L_646829496481104291",
+								"ssids",
+								"0",
+								"splashSettings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success; basic click-through",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0/splashSettings",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104291",
+										"ssids",
+										"0",
+										"splashSettings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:09:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "bc37e7be51af0d8d60c11449dfa9f658"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.161508"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ssidNumber\": 0,\n    \"splashMethod\": \"Click-through splash page\",\n    \"splashUrl\": null,\n    \"useSplashUrl\": false\n}"
+						},
+						{
+							"name": "Success; direct access",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0/splashSettings",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104291",
+										"ssids",
+										"0",
+										"splashSettings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:12:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "033be8ddcbf183c565e32269bd13aef0"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.181114"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ssidNumber\": 0,\n    \"splashMethod\": \"None\",\n    \"splashUrl\": null,\n    \"useSplashUrl\": false\n}"
+						},
+						{
+							"name": "Success; external splash page",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0/splashSettings",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104291",
+										"ssids",
+										"0",
+										"splashSettings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:14:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "af92da18fb1acdc99a1a2688eb661abe"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.133478"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ssidNumber\": 0,\n    \"splashMethod\": \"Click-through splash page\",\n    \"splashUrl\": \"https://192.0.2.1/index.html\",\n    \"useSplashUrl\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Update SSID for basic click-through",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"type": "text",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"splashPage\": \"Click-through splash page\",\n    \"authMode\": \"open\",\n    \"walledGardenEnabled\": false\n}"
+						},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"networks",
+								"L_646829496481104291",
+								"ssids",
+								"0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"splashPage\": \"Click-through splash page\",\n    \"authMode\": \"open\",\n    \"walledGardenEnabled\": false\n}"
+								},
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104291",
+										"ssids",
+										"0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:32:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "d7589ff3f011d73f59fe21739adc3d8c"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.521635"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"number\": 0,\n    \"name\": \"DNSMB5 - wireless WiFi\",\n    \"enabled\": true,\n    \"splashPage\": \"Click-through splash page\",\n    \"ssidAdminAccessible\": false,\n    \"authMode\": \"open\",\n    \"radiusAccountingEnabled\": false,\n    \"ipAssignmentMode\": \"NAT mode\",\n    \"adminSplashUrl\": \"\",\n    \"splashTimeout\": \"1440 minutes\",\n    \"walledGardenEnabled\": false,\n    \"minBitrate\": 11,\n    \"bandSelection\": \"Dual band operation\",\n    \"perClientBandwidthLimitUp\": 0,\n    \"perClientBandwidthLimitDown\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Update SSID for excap",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"type": "text",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"splashPage\": \"Click-through splash page\",\n    \"authMode\": \"open\",\n    \"adminSplashUrl\": \"http://51.1.1.1/index.html\",\n    \"walledGardenEnabled\": true,\n    \"walledGardenRanges\": \"51.1.1.1/32\"\n}"
+						},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"networks",
+								"L_646829496481104291",
+								"ssids",
+								"0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"splashPage\": \"Click-through splash page\",\n    \"authMode\": \"open\",\n    \"adminSplashUrl\": \"http://51.1.1.1/index.html\",\n    \"walledGardenEnabled\": true,\n    \"walledGardenRanges\": \"51.1.1.1/32\"\n}"
+								},
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104291",
+										"ssids",
+										"0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:33:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "1d5b486f3a665d7f135e12b74ada4ad9"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.189442"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"number\": 0,\n    \"name\": \"DNSMB5 - wireless WiFi\",\n    \"enabled\": true,\n    \"splashPage\": \"Click-through splash page\",\n    \"ssidAdminAccessible\": false,\n    \"authMode\": \"open\",\n    \"radiusAccountingEnabled\": false,\n    \"ipAssignmentMode\": \"NAT mode\",\n    \"adminSplashUrl\": \"http://51.1.1.1/index.html\",\n    \"splashTimeout\": \"1440 minutes\",\n    \"walledGardenEnabled\": true,\n    \"walledGardenRanges\": \"51.1.1.1/32\",\n    \"minBitrate\": 11,\n    \"bandSelection\": \"Dual band operation\",\n    \"perClientBandwidthLimitUp\": 0,\n    \"perClientBandwidthLimitDown\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Update splash settings for excap",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -2665,7 +4682,7 @@
 							"raw": "{\n    \"splashMethod\": \"Click-through splash page\",\n    \"splashUrl\": \"http://51.1.1.1/index.html\",\n    \"useSplashUrl\": true\n}"
 						},
 						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/ssids/0/splashSettings",
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0/splashSettings",
 							"protocol": "https",
 							"host": [
 								"dashboard",
@@ -2676,7 +4693,7 @@
 								"api",
 								"v0",
 								"networks",
-								"L_646829496481104290",
+								"L_646829496481104291",
 								"ssids",
 								"0",
 								"splashSettings"
@@ -2710,7 +4727,7 @@
 									"raw": "{\n    \"splashMethod\": \"Click-through splash page\",\n    \"splashUrl\": \"http://51.1.1.1/index.html\",\n    \"useSplashUrl\": true\n}"
 								},
 								"url": {
-									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104290/ssids/0/splashSettings",
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0/splashSettings",
 									"protocol": "https",
 									"host": [
 										"dashboard",
@@ -2721,7 +4738,7 @@
 										"api",
 										"v0",
 										"networks",
-										"L_646829496481104290",
+										"L_646829496481104291",
 										"ssids",
 										"0",
 										"splashSettings"
@@ -2738,7 +4755,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 14 Jan 2020 12:56:50 GMT"
+									"value": "Mon, 20 Jan 2020 12:33:09 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -2782,11 +4799,11 @@
 								},
 								{
 									"key": "X-Request-Id",
-									"value": "74b38389ebaeb1e20f6a0467bb986ad3"
+									"value": "7b4365833a49fed5a5ddffcc1f9e027b"
 								},
 								{
 									"key": "X-Runtime",
-									"value": "0.277889"
+									"value": "0.181205"
 								},
 								{
 									"key": "X-XSS-Protection",
@@ -2799,6 +4816,160 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"ssidNumber\": 0,\n    \"splashMethod\": \"Click-through splash page\",\n    \"splashUrl\": \"http://51.1.1.1/index.html\",\n    \"useSplashUrl\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Update splash settings for basic click-through",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"type": "text",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"splashMethod\": \"Click-through splash page\",\n    \"useSplashUrl\": false\n}"
+						},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0/splashSettings",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"networks",
+								"L_646829496481104291",
+								"ssids",
+								"0",
+								"splashSettings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure; bad body",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Cisco-Meraki-API-Key",
+										"type": "text",
+										"value": "{{api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"splashMethod\": \"Click-through splash page\",\n    \"useSplashUrl\": false\n}"
+								},
+								"url": {
+									"raw": "https://dashboard.meraki.com/api/v0/networks/L_646829496481104291/ssids/0/splashSettings",
+									"protocol": "https",
+									"host": [
+										"dashboard",
+										"meraki",
+										"com"
+									],
+									"path": [
+										"api",
+										"v0",
+										"networks",
+										"L_646829496481104291",
+										"ssids",
+										"0",
+										"splashSettings"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2020 12:24:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "bc52767f9d7b302ff811558528791a1c"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.083877"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"'splashUrl' must be a string\"\n    ]\n}"
 						}
 					]
 				}

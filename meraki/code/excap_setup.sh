@@ -1,13 +1,14 @@
 #!/bin/bash
+# On an Ubuntu machine, run this script as root to setup a simple excap
 
-# Install Apache web services
-apt install apache2
+# Install Apache2 web service (basic web server) and git
+apt install apache2 git
 
 # Download the Meraki sample click-through excap code
 git clone https://github.com/meraki/js-splash.git
 
-# Copy the excap code to the Apache directory
+# Move the excap sample code to the proper directory
 mv js-splash/public/* /var/www/html/
 
-# Restart Apache so the new files are processed
+# Restart Apache2 so the new files are processed
 service apache2 restart

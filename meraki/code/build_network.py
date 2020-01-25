@@ -22,7 +22,7 @@ def main(org_name):
     orgs = req("organizations").json()
 
     # Print the list of organizations for troubleshooting
-    print(json.dumps(orgs, indent=2))
+    # print(json.dumps(orgs, indent=2))
 
     # See if supplied org_name is already present by looping
     # over all collected organizations
@@ -37,7 +37,7 @@ def main(org_name):
     cur_nets = req(f"organizations/{org_id}/networks").json()
 
     # Print the list of networks for troubleshooting
-    print(json.dumps(cur_nets, indent=2))
+    # print(json.dumps(cur_nets, indent=2))
 
     # Load in the networks to add, and iterate over them
     with open("add_networks.json", "r") as handle:
@@ -65,7 +65,7 @@ def main(org_name):
         print(f"Created network {net_name} with ID {net_id}")
 
         # Debugging statement to display new network configuration
-        print(json.dumps(new_net, indent=2))
+        # print(json.dumps(new_net, indent=2))
 
         # Iterate over the list of devices that belong in each new network
         # and claim each device individually (no body data returned)
@@ -89,7 +89,7 @@ def main(org_name):
             print(f"Device with SN {sn} named {device['update']['name']}")
 
             # Debugging statement to print the device details after update
-            print(json.dumps(update, indent=2))
+            # print(json.dumps(update, indent=2))
 
             # Sanity check; ensure the name update actually worked
             if update["name"] != device["update"]["name"]:

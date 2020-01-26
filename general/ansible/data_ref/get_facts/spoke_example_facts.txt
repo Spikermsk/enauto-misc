@@ -1,0 +1,44 @@
+### Begin interface summary ###
+1. VirtualPortGroup0: up/up
+2. GigabitEthernet1: up/up
+3. GigabitEthernet2: administratively down/down
+4. GigabitEthernet3: administratively down/down
+5. Loopback105: up/up
+6. Loopback0: up/up
+7. Tunnel100: up/up
+8. Tunnel101: up/up
+### End   interface summary ###
+### Begin output from command: show ip ospf neighbor Tunnel100 detail ###
+Neighbor 203.0.113.2, interface address 203.0.113.2, interface-id 17
+    In the area 0 via interface Tunnel100
+    Neighbor priority is 0, State is FULL, 12 state changes
+    DR is 0.0.0.0 BDR is 0.0.0.0
+    Options is 0x12 in Hello (E-bit, L-bit)
+    Options is 0x52 in DBD (E-bit, L-bit, O-bit)
+    LLS Options is 0x1 (LR)
+    Dead timer due in 00:01:50
+    Neighbor is up for 00:01:34
+    Index 1/1/1, retransmission queue length 0, number of retransmission 1
+    First 0x0(0)/0x0(0)/0x0(0) Next 0x0(0)/0x0(0)/0x0(0)
+    Last retransmission scan length is 1, maximum is 1
+    Last retransmission scan time is 0 msec, maximum is 0 msec
+### End   output from command: show ip ospf neighbor Tunnel100 detail ###
+### Begin output from command: show ip interface brief | exclude unassigned ###
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       10.10.20.48     YES other  up                    up      
+Loopback0              192.0.2.1       YES manual up                    up      
+Loopback105            172.16.105.1    YES TFTP   up                    up      
+Tunnel100              203.0.113.1     YES manual up                    up      
+Tunnel101              203.0.113.2     YES manual up                    up      
+VirtualPortGroup0      192.168.1.1     YES manual up                    up
+### End   output from command: show ip interface brief | exclude unassigned ###
+### Begin output from command: show ip ospf interface Tunnel100 | begin Cryptographic ###
+Cryptographic authentication enabled
+    Sending SA: Key 1, Algorithm HMAC-SHA-256 - key chain KC_OSPF_AUTH
+### End   output from command: show ip ospf interface Tunnel100 | begin Cryptographic ###
+### Begin output from command: show ip ospf | include TTL|Reference ###
+Reference bandwidth unit is 1000 mbps
+ Strict TTL checking enabled
+ Reference bandwidth unit is 100 mbps
+ Strict TTL checking enabled
+### End   output from command: show ip ospf | include TTL|Reference ###

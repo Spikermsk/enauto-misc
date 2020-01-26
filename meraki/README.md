@@ -11,11 +11,12 @@
 7. Module Summary
 
 ## m3: Collecting Video Footage from Meraki MV Cameras (15m)
-1. Capabilities of the MV Sense API
-2. Demo: Exploring the MV Sense Camera GUI
+1. Capabilities of the Meraki MV Cameras
+2. Demo: Exploring the MV Camera GUI
 3. Demo: Collecting and Viewing Camera Footage
 4. Demo: Adjusting Camera Quality and Retention Settings
-5. Module Summary
+5. Demo: Collecting Camera Analytics using the MV Sense API
+6. Module Summary
 
 ## m4: Designing and Deploying Wireless Captive Portals (25m)
 1. What is a Captive Portal?
@@ -35,4 +36,4 @@
 7. Course Summary and Homework Challenges
   - build the helpers into a more robust SDK
   - Build your own excap using flask or JS and tie it into meraki
-  - if you have hardware, set up location data and webhook processing
+  - use the TIG stack to collect MV sense analytics and graph it

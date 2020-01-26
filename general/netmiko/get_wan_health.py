@@ -19,7 +19,7 @@ def main():
         host_root = safe_load(handle)
 
     # Iterate over the list of hosts (list of dictionaries)
-    for host in host_root["host_list"]:
+    for host in host_root["production"]:
 
         # Load the host-specific VRF declarative state
         # with open(f"vars/commands_{host}.yml", "r") as handle:

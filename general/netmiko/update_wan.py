@@ -23,7 +23,7 @@ def main():
         new_config = handle.read()
 
     # Iterate over the list of hosts (list of dictionaries)
-    for host in host_root["host_list"]:
+    for host in host_root["production"]:
 
         # Create netmiko SSH connection handler to access the device
         conn = Netmiko(

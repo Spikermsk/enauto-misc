@@ -1,6 +1,6 @@
 ---
 - name: "PLAY 1: Collect information from all routers"
-  hosts: "devnet"
+  hosts: "production"
   tasks:
     - name: "TASK 1: Collect system facts"
       ios_facts:

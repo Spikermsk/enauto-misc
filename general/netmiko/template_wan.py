@@ -24,7 +24,7 @@ def main():
         data = safe_load(handle)
 
     # Iterate over the list of hosts (list of dictionaries)
-    for host in host_root["host_list"]:
+    for host in host_root["production"]:
 
         # Setup the jinja2 templating environment and render the template
         j2_env = Environment(

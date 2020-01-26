@@ -1,0 +1,90 @@
+# devbox should be 10.1.2.85/24, gway = .2, dns = .1, domain = njrusmc.net
+
+# dc
+conf t
+hostname DNS-TFTP-SVR
+
+ip dns server
+ip domain-name njrusmc.net
+ip host connect.njrusmc.net 203.0.113.2
+ip host hub.njrusmc.net 10.0.0.2
+ip host site1.njrusmc.net 10.0.0.4
+ip host site2.njrusmc.net 10.0.0.5
+tftp-server unix:ztp.py alias ztp.py
+
+ip route 0.0.0.0 0.0.0.0 10.1.2.2 name DEF_GWAY_HUB
+
+int et0/0
+ desc TO HUB
+ ip address 10.1.2.1 255.255.255.0
+ no shut
+end
+wr
+
+
+
+# hub
+conf t
+hostname HUB
+
+int lo0
+ ip address 10.0.0.2 255.255.255.255
+ ip ospf 1 area 0
+
+int gig1
+ desc TO DATA CENTER SERVERS
+ ip address 10.1.2.2 255.255.255.0
+ ip ospf 1 area 0
+ no shut
+ 
+int gig2
+ desc TO SP
+ ip address 203.0.113.2 255.255.255.0
+ no shut
+
+router ospf 1
+ pass lo0
+ pass et0/0
+
+ip route 192.0.2.0 255.255.255.0 203.0.113.3 name SPOKE_DHCP
+
+interface Tunnel100
+ desc DMVPN HUB TUNNEL
+ ip address 172.16.100.2 255.255.255.0
+ no ip redirects
+ ip nhrp map multicast dynamic
+ ip nhrp network-id 100
+ ip ospf network point-to-multipoint
+ ip ospf 1 area 0
+ tunnel source gig2
+ tunnel mode gre multipoint
+end
+wr
+
+
+
+# sp
+conf t
+hostname SP
+
+ip dhcp exclude 192.0.2.0-192.0.2.10
+
+ip dhcp pool ZTP
+ network 192.0.2.0 255.255.255.0
+ default-router 192.0.2.3
+ domain-name njrusmc.net
+ dns-server 10.1.2.1
+ option 150 ip 10.1.2.1
+ option 67 ascii ztp.py
+
+int et0/1
+ desc TO SITE LAN
+ ip add 192.0.2.3 255.255.255.0
+ no shut
+
+int et0/2
+ desc TO HQ
+ ip address 203.0.113.3 255.255.255.0
+ no shut
+end
+wr

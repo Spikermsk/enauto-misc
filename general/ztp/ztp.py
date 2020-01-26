@@ -19,8 +19,8 @@ sn = sn_text.split(" ")[-1]
 # Define serial to IP address 2-tuple matching, which provides the
 # unique tunnel and loopback IPs for each device.
 ipaddr_map = {
-    "9R8H2QTLGRA": ("10.0.0.91", "172.16.100.91"),
-    "9BZ0FXAYK7X": ("10.0.0.92", "172.16.100.92")
+    "9R8H2QTLGRA": ("10.0.0.4", "172.16.100.4"),
+    "9BZ0FXAYK7X": ("10.0.0.5", "172.16.100.5")
 }
 
 # Check the dictionary for a serial number and unpack the addresses
@@ -32,7 +32,7 @@ print "\n* sn {0} -> lb0: {1}, tun100: {2}".format(sn, lb0_ip, tun100_ip)
 #  2. Configure SSH with crypto keys
 #  3. Create a basic username and VTY access methods
 #  4. Configure loopback
-#  5. Configure DMVPN spoke tunnel with OSPFv2
+#  5. Configure DMVPN spoke tunnel with OSPF
 config_cmds = [
     "hostname ZTP-{}".format(sn),
     "ip ssh version 2",
@@ -47,9 +47,10 @@ config_cmds = [
     "ip address {} 255.255.255.255".format(lb0_ip),
     "ip ospf 1 area 0",
     "interface Tunnel100",
+    "description DMVPN SPOKE TUNNEL",
     "ip address {} 255.255.255.0".format(tun100_ip),
     "ip nhrp network-id 100",
-    "ip nhrp nhs dynamic nbma hub.njrusmc.net multicast",
+    "ip nhrp nhs dynamic nbma connect.njrusmc.net multicast",
     "ip ospf network point-to-multipoint",
     "ip ospf 1 area 0",
     "tunnel source GigabitEthernet1",

@@ -1,0 +1,199 @@
+version 16.12
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service call-home
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname HUB
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable password cisco
+!
+no aaa new-model
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+  no destination transport-method email
+!
+!
+!
+!
+!
+!
+!
+ip host connect.njrusmc.net 203.0.113.1
+ip host hub.njrusmc.net 10.0.0.1
+ip host site2.njrusmc.net 10.0.0.2
+ip host site3.njrusmc.net 10.0.0.3
+ip domain name njrusmc.net
+ip dhcp excluded-address 203.0.113.0 203.0.113.10
+!
+ip dhcp pool ZTP
+ network 203.0.113.0 255.255.255.0
+ default-router 203.0.113.1
+ domain-name njrusmc.net
+ dns-server 203.0.113.1
+ option 150 ip 203.0.113.1
+ option 67 ascii ztp.py
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01 nvram:CiscoLicensi#1CA.cer
+!
+license udi pid CSR1000V sn 9BA1TJ9I90V
+diagnostic bootup level minimal
+memory free low-watermark processor 72406
+!
+!
+spanning-tree extend system-id
+!
+username cisco privilege 15 password 0 cisco
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.0.0.1 255.255.255.255
+ ip ospf 1 area 0
+!
+interface Tunnel100
+ description DMVPN HUB TUNNEL
+ ip address 172.16.100.1 255.255.255.0
+ no ip redirects
+ ip nhrp network-id 100
+ ip ospf network point-to-multipoint
+ ip ospf 1 area 0
+ tunnel source GigabitEthernet1
+ tunnel mode gre multipoint
+!
+interface GigabitEthernet1
+ description TO SITE LAN
+ ip address 203.0.113.1 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ ip address 10.1.30.1 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+router ospf 1
+ passive-interface Loopback0
+!
+ip forward-protocol nd
+no ip http server
+ip http authentication local
+no ip http secure-server
+!
+ip dns server
+ip ssh version 2
+!
+!
+!
+!
+!
+tftp-server bootflash:ztp.py alias ztp.py
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0 4
+ exec-timeout 0 0
+ login local
+!
+!
+!
+!
+!
+!
+end

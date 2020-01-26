@@ -9,3 +9,5 @@ basics:
   - guestshell stays on after ZTP is complete
   - must have `ip http server` enabled, which doesn't appear default
     on CSR1000v (but should be on hardware platforms)
+
+puts [open "unix:ztp.py" w+] {

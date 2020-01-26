@@ -29,9 +29,8 @@ def main():
         # Create netmiko SSH connection handler to access the device
         conn = Netmiko(
             host=host["name"],
-            port=8181,
-            username="developer",
-            password="C1sco12345",
+            username="cisco",
+            password="cisco",
             device_type="cisco_ios",
         )
 

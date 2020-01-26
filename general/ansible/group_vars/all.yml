@@ -1,0 +1,19 @@
+---
+# Connectivity parameters
+ansible_connection: "network_cli"
+ansible_network_os: "ios"
+ansible_user: "developer"
+ansible_password: "C1sco12345"
+
+# Network parameters
+security:
+  key_chain:
+    name: "KC_OSPF_AUTH"
+    key:
+      id: 1
+      text: "SECRET123"
+
+routing:
+  ref_bw: 1000
+  ttl_security_hops: 1
+...

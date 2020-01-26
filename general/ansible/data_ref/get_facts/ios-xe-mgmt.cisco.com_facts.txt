@@ -1,0 +1,36 @@
+### Begin interface summary ###
+1. Loopback1369: up/up
+2. VirtualPortGroup0: up/up
+3. Loopback1110: up/up
+4. Loopback1320: up/up
+5. Loopback1420: up/up
+6. Loopback1120: up/up
+7. GigabitEthernet1: up/up
+8. GigabitEthernet2: up/up
+9. GigabitEthernet3: administratively down/down
+10. Loopback102: up/up
+11. Loopback1469: up/up
+12. Loopback1269: up/up
+13. Loopback1410: up/up
+14. Loopback1220: up/up
+15. Loopback1169: up/up
+16. Loopback1210: up/up
+### End   interface summary ###
+### Begin output from command: show inventory ###
+NAME: "Chassis", DESCR: "Cisco CSR1000V Chassis"
+PID: CSR1000V          , VID: V00  , SN: 9U9AKI59H8O
+
+NAME: "module R0", DESCR: "Cisco CSR1000V Route Processor"
+PID: CSR1000V          , VID: V00  , SN: JAB1303001C
+
+NAME: "module F0", DESCR: "Cisco CSR1000V Embedded Services Processor"
+PID: CSR1000V          , VID:      , SN:
+### End   output from command: show inventory ###
+### Begin output from command: show users ###
+Line       User       Host(s)              Idle       Location
+*  1 vty 0     developer  idle                 00:00:00 52.45.123.182
+
+  Interface    User               Mode         Idle     Peer Address
+  unknown      NETCONF(ONEP)      com.cisco.ne 00:00:29 
+  unknown      a(ONEP)            com.cisco.sy 00:00:39
+### End   output from command: show users ###

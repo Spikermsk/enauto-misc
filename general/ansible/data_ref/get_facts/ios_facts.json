@@ -1,0 +1,106 @@
+{
+  "sys_facts": {
+    "ansible_facts": {
+      "ansible_net_all_ipv4_addresses": [
+        "192.168.1.1",
+        "172.16.105.1",
+        "10.10.20.48"
+      ],
+      "ansible_net_all_ipv6_addresses": [],
+      "ansible_net_api": "cliconf",
+      "ansible_net_gather_subset": [
+        "default",
+        "interfaces"
+      ],
+      "ansible_net_hostname": "csr1000v-1",
+      "ansible_net_image": "bootflash:packages.conf",
+      "ansible_net_interfaces": {
+        "GigabitEthernet1": {
+          "bandwidth": 1000000,
+          "description": "MANAGEMENT INTERFACE - DON'T TOUCH ME",
+          "duplex": "Full",
+          "ipv4": [
+            {
+              "address": "10.10.20.48",
+              "subnet": "24"
+            }
+          ],
+          "lineprotocol": "up",
+          "macaddress": "0050.56bb.e99c",
+          "mediatype": "Virtual",
+          "mtu": 1500,
+          "operstatus": "up",
+          "type": "CSR vNIC"
+        },
+        "GigabitEthernet2": {
+          "bandwidth": 1000000,
+          "description": "Network Interface",
+          "duplex": "Full",
+          "ipv4": [],
+          "lineprotocol": "down",
+          "macaddress": "0050.56bb.771a",
+          "mediatype": "Virtual",
+          "mtu": 1500,
+          "operstatus": "administratively down",
+          "type": "CSR vNIC"
+        },
+        "GigabitEthernet3": {
+          "bandwidth": 1000000,
+          "description": "Network Interface",
+          "duplex": "Full",
+          "ipv4": [],
+          "lineprotocol": "down",
+          "macaddress": "0050.56bb.eb1e",
+          "mediatype": "Virtual",
+          "mtu": 1500,
+          "operstatus": "administratively down",
+          "type": "CSR vNIC"
+        },
+        "Loopback105": {
+          "bandwidth": 8000000,
+          "description": "Added with RESTCONF",
+          "duplex": null,
+          "ipv4": [
+            {
+              "address": "172.16.105.1",
+              "subnet": "29"
+            }
+          ],
+          "lineprotocol": "up",
+          "macaddress": null,
+          "mediatype": null,
+          "mtu": 1514,
+          "operstatus": "up",
+          "type": null
+        },
+        "VirtualPortGroup0": {
+          "bandwidth": 750000,
+          "description": null,
+          "duplex": null,
+          "ipv4": [
+            {
+              "address": "192.168.1.1",
+              "subnet": "24"
+            }
+          ],
+          "lineprotocol": "up",
+          "macaddress": "001e.e565.3fbd",
+          "mediatype": null,
+          "mtu": 1500,
+          "operstatus": "up",
+          "type": "Virtual Port Group"
+        }
+      },
+      "ansible_net_iostype": "IOS-XE",
+      "ansible_net_model": "CSR1000V",
+      "ansible_net_neighbors": {},
+      "ansible_net_python_version": "2.7.5",
+      "ansible_net_serialnum": "9AB5YSHLI5Q",
+      "ansible_net_system": "ios",
+      "ansible_net_version": "16.11.01a",
+      "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "failed": false
+  }
+}

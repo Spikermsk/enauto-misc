@@ -1,6 +1,6 @@
 ---
 - name: "PLAY 1: Update config related to WAN"
-  hosts: "production"
+  hosts: "all"
   tasks:
     - name: "TASK 1: Render jinja2 template onto device"
       ios_config:

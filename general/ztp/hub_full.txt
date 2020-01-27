@@ -1,7 +1,6 @@
-version 16.12
+version 16.9
 service timestamps debug datetime msec
 service timestamps log datetime msec
-service call-home
 platform qfp utilization monitor load 80
 no platform punt-keepalive disable-kernel-core
 platform console serial
@@ -12,17 +11,10 @@ boot-start-marker
 boot-end-marker
 !
 !
+logging buffered 900000
 enable password cisco
 !
 no aaa new-model
-call-home
- ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
- ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
- contact-email-addr sch-smart-licensing@cisco.com
- profile "CiscoTAC-1"
-  active
-  destination transport-method http
-  no destination transport-method email
 !
 !
 !
@@ -39,15 +31,15 @@ ip dhcp excluded-address 203.0.113.0 203.0.113.10
 !
 ip dhcp pool ZTP
  network 203.0.113.0 255.255.255.0
- default-router 203.0.113.1
+ default-router 203.0.113.1 
  domain-name njrusmc.net
- dns-server 203.0.113.1
- option 150 ip 203.0.113.1
+ dns-server 203.0.113.1 
+ option 150 ip 203.0.113.1 
  option 67 ascii ztp.py
 !
 !
 !
-login on-success log
+no login on-success log
 !
 !
 !
@@ -56,11 +48,10 @@ login on-success log
 !
 !
 subscriber templating
-!
-!
-!
-!
-!
+! 
+! 
+! 
+! 
 !
 multilink bundle-name authenticated
 !
@@ -68,6 +59,10 @@ multilink bundle-name authenticated
 !
 !
 !
+key chain KC_OSPF_AUTH
+ key 1
+  key-string SECRET123
+   cryptographic-algorithm hmac-sha-256
 !
 !
 !
@@ -77,20 +72,14 @@ multilink bundle-name authenticated
 !
 !
 !
-crypto pki trustpoint SLA-TrustPoint
- enrollment pkcs12
- revocation-check crl
 !
-!
-crypto pki certificate chain SLA-TrustPoint
- certificate ca 01 nvram:CiscoLicensi#1CA.cer
-!
-license udi pid CSR1000V sn 9BA1TJ9I90V
+license udi pid CSR1000V sn 9I3LFKG88AQ
+no license smart enable
 diagnostic bootup level minimal
-memory free low-watermark processor 72406
-!
 !
 spanning-tree extend system-id
+!
+!
 !
 username cisco privilege 15 password 0 cisco
 !
@@ -101,6 +90,7 @@ redundancy
 !
 !
 !
+! 
 !
 !
 !
@@ -113,9 +103,8 @@ redundancy
 !
 !
 !
-!
-!
-!
+! 
+! 
 !
 !
 interface Loopback0
@@ -127,6 +116,7 @@ interface Tunnel100
  ip address 172.16.100.1 255.255.255.0
  no ip redirects
  ip nhrp network-id 100
+ ip ospf authentication key-chain KC_OSPF_AUTH
  ip ospf network point-to-multipoint
  ip ospf 1 area 0
  tunnel source GigabitEthernet1
@@ -140,37 +130,33 @@ interface GigabitEthernet1
  no mop sysid
 !
 interface GigabitEthernet2
- ip address 10.1.30.1 255.255.255.0
+ description TO MGMT NETWORK
+ ip address 192.168.2.191 255.255.255.0
  negotiation auto
  no mop enabled
  no mop sysid
 !
 interface GigabitEthernet3
- no ip address
- shutdown
- negotiation auto
- no mop enabled
- no mop sysid
-!
-interface GigabitEthernet4
- no ip address
- shutdown
+ description TO DEVBOX
+ ip address 10.0.19.1 255.255.255.0
+ ip ospf 1 area 0
  negotiation auto
  no mop enabled
  no mop sysid
 !
 router ospf 1
+ auto-cost reference-bandwidth 1000
+ ttl-security all-interfaces
+ passive-interface GigabitEthernet3
  passive-interface Loopback0
 !
-ip forward-protocol nd
+no ip forward-protocol nd
 no ip http server
-ip http authentication local
 no ip http secure-server
-!
 ip dns server
+!
+ip ssh logging events
 ip ssh version 2
-!
-!
 !
 !
 !
@@ -183,9 +169,19 @@ control-plane
 !
 !
 !
+banner incoming %
+site2 serial: 9TVCW8U5WDO
+site3 serial: 9XFZQ9A2Y9P
+
+tclsh
+puts [open "bootflash:ztp.py" w+] {(paste)
+}
+tclquit
+%
 !
 line con 0
  exec-timeout 0 0
+ privilege level 15
  stopbits 1
 line vty 0 4
  exec-timeout 0 0

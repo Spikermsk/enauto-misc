@@ -1,10 +1,12 @@
 {
-  "sys_facts": {
+  "facts": {
     "ansible_facts": {
       "ansible_net_all_ipv4_addresses": [
-        "192.168.1.1",
-        "172.16.105.1",
-        "10.10.20.48"
+        "172.16.100.1",
+        "10.0.0.1",
+        "203.0.113.1",
+        "192.168.2.191",
+        "10.0.19.1"
       ],
       "ansible_net_all_ipv6_addresses": [],
       "ansible_net_api": "cliconf",
@@ -12,21 +14,21 @@
         "default",
         "interfaces"
       ],
-      "ansible_net_hostname": "csr1000v-1",
+      "ansible_net_hostname": "HUB",
       "ansible_net_image": "bootflash:packages.conf",
       "ansible_net_interfaces": {
         "GigabitEthernet1": {
           "bandwidth": 1000000,
-          "description": "MANAGEMENT INTERFACE - DON'T TOUCH ME",
+          "description": "TO SITE LAN",
           "duplex": "Full",
           "ipv4": [
             {
-              "address": "10.10.20.48",
+              "address": "203.0.113.1",
               "subnet": "24"
             }
           ],
           "lineprotocol": "up",
-          "macaddress": "0050.56bb.e99c",
+          "macaddress": "000c.29e8.0871",
           "mediatype": "Virtual",
           "mtu": 1500,
           "operstatus": "up",
@@ -34,36 +36,46 @@
         },
         "GigabitEthernet2": {
           "bandwidth": 1000000,
-          "description": "Network Interface",
+          "description": "TO MGMT NETWORK",
           "duplex": "Full",
-          "ipv4": [],
-          "lineprotocol": "down",
-          "macaddress": "0050.56bb.771a",
+          "ipv4": [
+            {
+              "address": "192.168.2.191",
+              "subnet": "24"
+            }
+          ],
+          "lineprotocol": "up",
+          "macaddress": "000c.29e8.087b",
           "mediatype": "Virtual",
           "mtu": 1500,
-          "operstatus": "administratively down",
+          "operstatus": "up",
           "type": "CSR vNIC"
         },
         "GigabitEthernet3": {
           "bandwidth": 1000000,
-          "description": "Network Interface",
+          "description": "TO DEVBOX",
           "duplex": "Full",
-          "ipv4": [],
-          "lineprotocol": "down",
-          "macaddress": "0050.56bb.eb1e",
+          "ipv4": [
+            {
+              "address": "10.0.19.1",
+              "subnet": "24"
+            }
+          ],
+          "lineprotocol": "up",
+          "macaddress": "000c.29e8.0885",
           "mediatype": "Virtual",
           "mtu": 1500,
-          "operstatus": "administratively down",
+          "operstatus": "up",
           "type": "CSR vNIC"
         },
-        "Loopback105": {
+        "Loopback0": {
           "bandwidth": 8000000,
-          "description": "Added with RESTCONF",
+          "description": null,
           "duplex": null,
           "ipv4": [
             {
-              "address": "172.16.105.1",
-              "subnet": "29"
+              "address": "10.0.0.1",
+              "subnet": "32"
             }
           ],
           "lineprotocol": "up",
@@ -73,31 +85,31 @@
           "operstatus": "up",
           "type": null
         },
-        "VirtualPortGroup0": {
-          "bandwidth": 750000,
-          "description": null,
+        "Tunnel100": {
+          "bandwidth": 100,
+          "description": "DMVPN HUB TUNNEL",
           "duplex": null,
           "ipv4": [
             {
-              "address": "192.168.1.1",
+              "address": "172.16.100.1",
               "subnet": "24"
             }
           ],
           "lineprotocol": "up",
-          "macaddress": "001e.e565.3fbd",
+          "macaddress": null,
           "mediatype": null,
-          "mtu": 1500,
+          "mtu": 9976,
           "operstatus": "up",
-          "type": "Virtual Port Group"
+          "type": null
         }
       },
       "ansible_net_iostype": "IOS-XE",
       "ansible_net_model": "CSR1000V",
       "ansible_net_neighbors": {},
       "ansible_net_python_version": "2.7.5",
-      "ansible_net_serialnum": "9AB5YSHLI5Q",
+      "ansible_net_serialnum": "9I3LFKG88AQ",
       "ansible_net_system": "ios",
-      "ansible_net_version": "16.11.01a",
+      "ansible_net_version": "16.09.04",
       "discovered_interpreter_python": "/usr/bin/python"
     },
     "changed": false,

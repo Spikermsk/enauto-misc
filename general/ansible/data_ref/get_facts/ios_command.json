@@ -1,31 +1,53 @@
 {
-  "cli_output": {
-    "changed": false,
-    "failed": false,
-    "stdout": [
-      "NAME: \"Chassis\", DESCR: \"Cisco CSR1000V Chassis\"\nPID: CSR1000V          , VID: V00  , SN: 9AB5YSHLI5Q\n\nNAME: \"module R0\", DESCR: \"Cisco CSR1000V Route Processor\"\nPID: CSR1000V          , VID: V00  , SN: JAB1303001C\n\nNAME: \"module F0\", DESCR: \"Cisco CSR1000V Embedded Services Processor\"\nPID: CSR1000V          , VID:      , SN:",
-      "Line       User       Host(s)              Idle       Location\n*  1 vty 0     developer  idle                 00:00:00\n                                       ec2-52-45-123-182.compute-1.amazonaws.com\n\n  Interface    User               Mode         Idle     Peer Address\n  unknown      NETCONF(ONEP)      com.cisco.ne 00:00:13 \n  unknown      a(ONEP)            com.cisco.sy 00:00:04"
+  "changed": false,
+  "failed": false,
+  "stdout": [
+    "****************************************************************************\n    NOTE: Link-Local, No-socket and Incomplete entries are not displayed\n****************************************************************************\nLegend: Type --> S - Static, D - Dynamic\n        Flags --> u - unique, r - registered, e - temporary, c - claimed\n        a - authoritative, t - route\n============================================================================\n\nIntf     NextHop Address                                    NBMA Address\n         Target Network                              T/Flag\n-------- ------------------------------------------- ------ ----------------\nTu100    172.16.100.2                                       203.0.113.11\n         172.16.100.2/32                             D/r   \nTu100    172.16.100.3                                       203.0.113.12\n         172.16.100.3/32                             D/r",
+    "Neighbor ID     Pri   State           Dead Time   Address         Interface\n10.0.0.3          0   FULL/  -        00:01:54    172.16.100.3    Tunnel100\n10.0.0.2          0   FULL/  -        00:01:36    172.16.100.2    Tunnel100",
+    "Cryptographic authentication enabled\n    Sending SA: Key 1, Algorithm HMAC-SHA-256 - key chain KC_OSPF_AUTH",
+    "Reference bandwidth unit is 1000 mbps\n Strict TTL checking enabled",
+    "Gateway of last resort is not set\n\n      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks\nO        10.0.0.2/32 [110/10001] via 172.16.100.2, 00:14:06, Tunnel100\nO        10.0.0.3/32 [110/10001] via 172.16.100.3, 00:14:06, Tunnel100\n      172.16.0.0/16 is variably subnetted, 4 subnets, 2 masks\nO        172.16.100.2/32 [110/10000] via 172.16.100.2, 00:14:06, Tunnel100\nO        172.16.100.3/32 [110/10000] via 172.16.100.3, 00:14:06, Tunnel100"
+  ],
+  "stdout_lines": [
+    [
+      "****************************************************************************",
+      "    NOTE: Link-Local, No-socket and Incomplete entries are not displayed",
+      "****************************************************************************",
+      "Legend: Type --> S - Static, D - Dynamic",
+      "        Flags --> u - unique, r - registered, e - temporary, c - claimed",
+      "        a - authoritative, t - route",
+      "============================================================================",
+      "",
+      "Intf     NextHop Address                                    NBMA Address",
+      "         Target Network                              T/Flag",
+      "-------- ------------------------------------------- ------ ----------------",
+      "Tu100    172.16.100.2                                       203.0.113.11",
+      "         172.16.100.2/32                             D/r   ",
+      "Tu100    172.16.100.3                                       203.0.113.12",
+      "         172.16.100.3/32                             D/r"
     ],
-    "stdout_lines": [
-      [
-        "NAME: \"Chassis\", DESCR: \"Cisco CSR1000V Chassis\"",
-        "PID: CSR1000V          , VID: V00  , SN: 9AB5YSHLI5Q",
-        "",
-        "NAME: \"module R0\", DESCR: \"Cisco CSR1000V Route Processor\"",
-        "PID: CSR1000V          , VID: V00  , SN: JAB1303001C",
-        "",
-        "NAME: \"module F0\", DESCR: \"Cisco CSR1000V Embedded Services Processor\"",
-        "PID: CSR1000V          , VID:      , SN:"
-      ],
-      [
-        "Line       User       Host(s)              Idle       Location",
-        "*  1 vty 0     developer  idle                 00:00:00",
-        "                                       ec2-52-45-123-182.compute-1.amazonaws.com",
-        "",
-        "  Interface    User               Mode         Idle     Peer Address",
-        "  unknown      NETCONF(ONEP)      com.cisco.ne 00:00:13 ",
-        "  unknown      a(ONEP)            com.cisco.sy 00:00:04"
-      ]
+    [
+      "Neighbor ID     Pri   State           Dead Time   Address         Interface",
+      "10.0.0.3          0   FULL/  -        00:01:54    172.16.100.3    Tunnel100",
+      "10.0.0.2          0   FULL/  -        00:01:36    172.16.100.2    Tunnel100"
+    ],
+    [
+      "Cryptographic authentication enabled",
+      "    Sending SA: Key 1, Algorithm HMAC-SHA-256 - key chain KC_OSPF_AUTH"
+    ],
+    [
+      "Reference bandwidth unit is 1000 mbps",
+      " Strict TTL checking enabled"
+    ],
+    [
+      "Gateway of last resort is not set",
+      "",
+      "      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks",
+      "O        10.0.0.2/32 [110/10001] via 172.16.100.2, 00:14:06, Tunnel100",
+      "O        10.0.0.3/32 [110/10001] via 172.16.100.3, 00:14:06, Tunnel100",
+      "      172.16.0.0/16 is variably subnetted, 4 subnets, 2 masks",
+      "O        172.16.100.2/32 [110/10000] via 172.16.100.2, 00:14:06, Tunnel100",
+      "O        172.16.100.3/32 [110/10000] via 172.16.100.3, 00:14:06, Tunnel100"
     ]
-  }
+  ]
 }

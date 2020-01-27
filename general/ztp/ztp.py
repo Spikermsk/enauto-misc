@@ -19,8 +19,8 @@ sn = sn_text.split(" ")[-1]
 # Define serial to IP address 2-tuple matching, which provides the
 # unique tunnel and loopback IPs for each device.
 ipaddr_map = {
-    "9R8H2QTLGRA": ("10.0.0.4", "172.16.100.4"),
-    "9BZ0FXAYK7X": ("10.0.0.5", "172.16.100.5")
+    "9TVCW8U5WDO": ("10.0.0.2", "172.16.100.2"),
+    "9XFZQ9A2Y9P": ("10.0.0.3", "172.16.100.3")
 }
 
 # Check the dictionary for a serial number and unpack the addresses

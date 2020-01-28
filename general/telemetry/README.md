@@ -22,6 +22,10 @@ Configure the router with some subscriptions:
 # Enable YANG, otherwise all xpaths will be invalid and subscriptions will fail
 netconf-yang
 
+# Wait until this command says "netconf-yang: enabled" before continuing.
+# If you configure subscriptions too quickly, the xpaths will be inaccessible
+do show netconf-yang status
+
 # Configure CPU utilization subscription (periodic 10 seconds)
 telemetry ietf subscription 100
  encoding encode-kvgpb
@@ -102,3 +106,9 @@ optionally group by LIMIT, but can leave blank
 format as table
 
 may need to refresh to see changes
+
+
+A good idea: when building a panel, click the gear (General) and give the
+panel a name, like "CPU" or "Memory".
+
+On the main dashboard board, you can "zoom in" by setting a time window

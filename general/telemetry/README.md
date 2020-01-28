@@ -17,6 +17,9 @@ the IP address of the TIG server: `ping tig.njrusmc.net`
 
 Use the `make_trees.sh` script, which relies on `pyang`, to build
 
+Be sure your router is on IOS-XE version 16.12.02 or newer, as dial-out
+gRPC telemetry is a relatively new feature
+
 Configure the router with some subscriptions:
 ```
 # Enable YANG, otherwise all xpaths will be invalid and subscriptions will fail

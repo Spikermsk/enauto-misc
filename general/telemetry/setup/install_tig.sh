@@ -7,4 +7,4 @@ cd tig-stack/
 docker-compose up --detach
 
 # Check to see that TCP ports 42518, 3000, 8083, and 8086 are open
-netstat -tnap
+ss -tna

@@ -28,7 +28,7 @@ telemetry ietf subscription 100
  filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds
  stream yang-push
  update-policy periodic 1000
- receiver ip address 10.10.19.188 42518 protocol grpc-tcp
+ receiver ip address 10.0.19.188 42518 protocol grpc-tcp
 
 # Configure memory statistics subscription (periodic 10 seconds)
 telemetry ietf subscription 101
@@ -36,7 +36,7 @@ telemetry ietf subscription 101
  filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
  stream yang-push
  update-policy periodic 1000
- receiver ip address 10.10.19.188 42518 protocol grpc-tcp
+ receiver ip address 10.0.19.188 42518 protocol grpc-tcp
 
 # Configure CDP neighbor details subscription (on-change)
 telemetry ietf subscription 103
@@ -44,7 +44,7 @@ telemetry ietf subscription 103
  filter xpath /cdp-ios-xe-oper:cdp-neighbor-details/cdp-neighbor-detail
  stream yang-push
  update-policy on-change
- receiver ip address 10.10.19.188 42518 protocol grpc-tcp
+ receiver ip address 10.0.19.188 42518 protocol grpc-tcp
 ```
 
 Ensure the dial-out connections succeed:

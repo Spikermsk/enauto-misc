@@ -50,62 +50,94 @@ def main():
 
 def update_wan(conn, filename):
     """
-    Updates switchports with new config based on YAML file. Expects that the
-    NETCONF connection is already open and that all data is valid. Feel
+    Updates tunnel, keychain, and OSPF config based on YAML file. Expects that
+    the NETCONF connection is already open and that all data is valid. Feel
     free to add more data validation here as a challenge.
     """
 
+    # Load in the data from the specified file
     with open(filename, "r") as handle:
         data = yaml.safe_load(handle)
 
+    # Assemble the payload based on the YANG structure. Using helper functions
+    # can improve readability/maintainability as shown here.
     payload = {
         "config": {
             "native": {
                 "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-native",
                 "interface": {
-                    "Tunnel": {
-                        "name": "100",
-                        "ip": {
-                            "ospf": {
-                                "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-ospf",
-                                "authentication": {
-                                    "key-chain": {"name": data["security"]["key_chain"]["name"]}
-                                }
-                            }
-                        }
-                    }
+                    "Tunnel": build_tunnel(data["security"]["key_chain"])
                 },
-                "key": {
-                    "chain": {
-                        "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-crypto",
-                        "name": data["security"]["key_chain"]["name"],
-                        "key": {
-                            "id": data["security"]["key_chain"]["key"]["id"],
-                            "cryptographic-algorithm": "hmac-sha-256",
-                            "key-string": {"key": data["security"]["key_chain"]["key"]["text"]},
-                        }
-                    }
-                },
-                "router": {
-                    "ospf": {
-                        "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-ospf",
-                        "id": "1",
-                        "auto-cost": {"reference-bandwidth": data["routing"]["ref_bw"]},
-                        "passive-interface": {"interface": ["Loopback0"]},
-                        "ttl-security": {
-                            "all-interfaces": None,
-                            "hops": data["routing"]["ttl_security_hops"],
-                        }
-                    }
-                }
+                "key": {"chain": build_keychain(data["security"]["key_chain"])},
+                "router": {"ospf": build_ospf(data["routing"])},
             }
         }
     }
 
     # Assemble the XML payload by "unparsing" the JSON dict (JSON --> XML)
     xpayload = xmltodict.unparse(payload)
+
+    # Issue the NETCONF edit_config RPC to the running config; return response
     config_resp = conn.edit_config(target="running", config=xpayload)
     return config_resp
+
+
+def build_tunnel(kc_dict):
+    """
+    Returns a YANG-structured dictionary that can be plugged into a Cisco
+    IOS-XE native YANG data payload. Uses the supplied kc_dict to give
+    access to all keychain related parameters. Includes a config snippet
+    for Tunnel 100.
+    """
+
+    return {
+        "name": "100",
+        "ip": {
+            "ospf": {
+                "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-ospf",
+                "authentication": {"key-chain": {"name": kc_dict["name"]}},
+            }
+        },
+    }
+
+
+def build_keychain(kc_dict):
+    """
+    Returns a YANG-structured dictionary that can be plugged into a Cisco
+    IOS-XE native YANG data payload. Uses the supplied kc_dict to give
+    access to all keychain related parameters. Includes a config snippet
+    for the specific keychain.
+    """
+
+    return {
+        "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-crypto",
+        "name": kc_dict["name"],
+        "key": {
+            "id": kc_dict["key"]["id"],
+            "key-string": {"key": kc_dict["key"]["text"]},
+            "cryptographic-algorithm": "hmac-sha-256",
+        },
+    }
+
+
+def build_ospf(routing_dict):
+    """
+    Returns a YANG-structured dictionary that can be plugged into a Cisco
+    IOS-XE native YANG data payload. Uses the supplied routing_dict to give
+    access to all routing related parameters. Includes a config snippet
+    for OSPF process ID 1.
+    """
+
+    return {
+        "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-ospf",
+        "id": "1",
+        "auto-cost": {"reference-bandwidth": routing_dict["ref_bw"]},
+        "passive-interface": {"interface": ["Loopback0"]},
+        "ttl-security": {
+            "all-interfaces": None,
+            "hops": routing_dict["ttl_security_hops"],
+        },
+    }
 
 
 def save_config_iosxe(conn):

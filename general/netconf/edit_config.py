@@ -18,34 +18,41 @@ def main():
     Execution begins here.
     """
 
-    # Dictionary containing keyword arguments (kwargs) for connecting
-    # via NETCONF. Because SSH is the underlying transport, there are
-    # several minor options to set up.
-    connect_params = {
-        "host": "ios-xe-mgmt-latest.cisco.com",
-        "port": 10000,
-        "username": "developer",
-        "password": "C1sco12345",
-        "hostkey_verify": False,
-        "allow_agent": False,
-        "look_for_keys": False,
-        "device_params": {"name": "csr"},
-    }
+    # Read the hosts file into structured data, may raise YAMLError
+    with open("hosts.yml", "r") as handle:
+        host_root = yaml.safe_load(handle)
 
-    # Unpack the connect_params dict and use them to connect inside
-    # of a "with" context manager. The variable "conn" represents the
-    # NETCONF connection to the device.
-    with manager.connect(**connect_params) as conn:
-        print("NETCONF session connected")
+    # Iterate over the list of hosts (list of dictionaries)
+    for host in host_root["production"]:
 
-        # Perform the update, and if success, print a message
-        config_resp = update_wan(conn, "config_state.yml")
+        # Dictionary containing keyword arguments (kwargs) for connecting
+        # via NETCONF. Because SSH is the underlying transport, there are
+        # several minor options to set up.
+        connect_params = {
+            "host": host["name"],
+            "port": 10000,
+            "username": "developer",
+            "password": "C1sco12345",
+            "hostkey_verify": False,
+            "allow_agent": False,
+            "look_for_keys": False,
+            "device_params": {"name": "csr"},
+        }
 
-        # If config and save operations succeed, print "saved" message
-        if config_resp.ok and save_config_iosxe(conn).ok:
-            print("Successfully saved running-config to startup-config")
+        # Unpack the connect_params dict and use them to connect inside
+        # of a "with" context manager. The variable "conn" represents the
+        # NETCONF connection to the device.
+        with manager.connect(**connect_params) as conn:
+            print(f"NETCONF session connected: {host['name']}")
 
-    print("NETCONF session disconnected")
+            # Perform the update, and if success, print a message
+            config_resp = update_wan(conn, "config_state.yml")
+
+            # If config and save operations succeed, print "saved" message
+            if config_resp.ok and save_config_iosxe(conn).ok:
+                print("Successfully saved running-config to startup-config")
+
+        print(f"NETCONF session disconnected: {host['name']}")
 
 
 def update_wan(conn, filename):

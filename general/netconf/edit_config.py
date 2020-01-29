@@ -30,9 +30,8 @@ def main():
         # several minor options to set up.
         connect_params = {
             "host": host["name"],
-            "port": 10000,
-            "username": "developer",
-            "password": "C1sco12345",
+            "username": "cisco",
+            "password": "cisco",
             "hostkey_verify": False,
             "allow_agent": False,
             "look_for_keys": False,
@@ -72,10 +71,10 @@ def update_wan(conn, filename):
         "config": {
             "native": {
                 "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-native",
+                "key": {"chain": build_keychain(data["security"]["key_chain"])},
                 "interface": {
                     "Tunnel": build_tunnel(data["security"]["key_chain"])
                 },
-                "key": {"chain": build_keychain(data["security"]["key_chain"])},
                 "router": {"ospf": build_ospf(data["routing"])},
             }
         }

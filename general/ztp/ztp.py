@@ -19,8 +19,8 @@ sn = sn_text.split(" ")[-1]
 # Define serial to IP address 2-tuple matching, which provides the
 # unique tunnel and loopback IPs for each device.
 ipaddr_map = {
-    "9TVCW8U5WDO": ("10.0.0.2", "172.16.100.2"),
-    "9XFZQ9A2Y9P": ("10.0.0.3", "172.16.100.3")
+    "92Z8YAWE1YO": ("10.0.0.2", "172.16.100.2"),
+    "9G7LDZKE6F4": ("10.0.0.3", "172.16.100.3")
 }
 
 # Check the dictionary for a serial number and unpack the addresses
@@ -40,6 +40,7 @@ config_cmds = [
     "crypto key generate rsa modulus 2048",
     "username cisco privilege 15 secret cisco",
     "enable secret cisco",
+    "netconf-yang",
     "line vty 0 4",
     "login local",
     "transport input ssh",

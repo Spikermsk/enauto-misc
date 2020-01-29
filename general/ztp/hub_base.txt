@@ -1,4 +1,6 @@
-version 16.9
+no service config
+no service call-home
+no call-home
 service timestamps debug datetime msec
 service timestamps log datetime msec
 platform qfp utilization monitor load 80
@@ -17,11 +19,6 @@ enable password cisco
 no aaa new-model
 !
 !
-!
-!
-!
-!
-!
 ip host connect.njrusmc.net 203.0.113.1
 ip host hub.njrusmc.net 10.0.0.1
 ip host site2.njrusmc.net 10.0.0.2
@@ -37,75 +34,13 @@ ip dhcp pool ZTP
  option 150 ip 203.0.113.1 
  option 67 ascii ztp.py
 !
-!
-!
 no login on-success log
 !
-!
-!
-!
-!
-!
-!
-subscriber templating
-! 
-! 
-! 
-! 
-!
-multilink bundle-name authenticated
-!
-!
-!
-!
-!
-key chain KC_OSPF_AUTH
- key 1
-  key-string SECRET123
-   cryptographic-algorithm hmac-sha-256
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-license udi pid CSR1000V sn 9I3LFKG88AQ
 no license smart enable
 diagnostic bootup level minimal
 !
-spanning-tree extend system-id
-!
-!
 !
 username cisco privilege 15 password 0 cisco
-!
-redundancy
-!
-!
-!
-!
-!
-!
-! 
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-! 
-! 
-!
 !
 interface Loopback0
  ip address 10.0.0.1 255.255.255.255
@@ -116,7 +51,6 @@ interface Tunnel100
  ip address 172.16.100.1 255.255.255.0
  no ip redirects
  ip nhrp network-id 100
- ip ospf authentication key-chain KC_OSPF_AUTH
  ip ospf network point-to-multipoint
  ip ospf 1 area 0
  tunnel source GigabitEthernet1
@@ -128,6 +62,7 @@ interface GigabitEthernet1
  negotiation auto
  no mop enabled
  no mop sysid
+ no shutdown
 !
 interface GigabitEthernet2
  description TO MGMT NETWORK
@@ -135,6 +70,7 @@ interface GigabitEthernet2
  negotiation auto
  no mop enabled
  no mop sysid
+ no shutdown
 !
 interface GigabitEthernet3
  description TO DEVBOX
@@ -143,12 +79,10 @@ interface GigabitEthernet3
  negotiation auto
  no mop enabled
  no mop sysid
+ no shutdown
 !
 router ospf 1
- auto-cost reference-bandwidth 1000
- ttl-security all-interfaces
  passive-interface GigabitEthernet3
- passive-interface Loopback0
 !
 no ip forward-protocol nd
 no ip http server
@@ -158,20 +92,13 @@ ip dns server
 ip ssh logging events
 ip ssh version 2
 !
-!
-!
 tftp-server bootflash:ztp.py alias ztp.py
 !
-!
-control-plane
-!
-!
-!
-!
+netconf-yang
 !
 banner incoming %
-site2 serial: 9TVCW8U5WDO
-site3 serial: 9XFZQ9A2Y9P
+site2 serial: 92Z8YAWE1YO
+site3 serial: 9G7LDZKE6F4
 
 tclsh
 puts [open "bootflash:ztp.py" w+] {(paste)
@@ -186,10 +113,5 @@ line con 0
 line vty 0 4
  exec-timeout 0 0
  login local
-!
-!
-!
-!
-!
 !
 end

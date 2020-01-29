@@ -35,9 +35,8 @@ def main():
         # several minor options to set up.
         connect_params = {
             "host": host["name"],
-            "port": 10000,
-            "username": "developer",
-            "password": "C1sco12345",
+            "username": "cisco",
+            "password": "cisco",
             "hostkey_verify": False,
             "allow_agent": False,
             "look_for_keys": False,
@@ -72,11 +71,6 @@ def main():
                   </router>
                 </native>
             """.strip()
-
-            # filter=("xpath", "/routing/routing-instance[name='default']")
-            # filter=("xpath", "/routing")
-            # filter=("xpath", "/native/key")
-            # filter=("xpath", "/native/interface")
 
             # Execute a "get-config" RPC using the filter defined above
             resp = conn.get_config(

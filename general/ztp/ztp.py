@@ -32,7 +32,7 @@ print "\n* sn {0} -> lb0: {1}, tun100: {2}".format(sn, lb0_ip, tun100_ip)
 #  2. Configure SSH with crypto keys
 #  3. Create a basic username and VTY access methods
 #  4. Configure loopback
-#  5. Configure DMVPN spoke tunnel with OSPF
+#  5. Configure DMVPN spoke tunnel with OSPF/CDP
 config_cmds = [
     "hostname ZTP-{}".format(sn),
     "ip ssh version 2",
@@ -41,6 +41,7 @@ config_cmds = [
     "username cisco privilege 15 secret cisco",
     "enable secret cisco",
     "netconf-yang",
+    "cdp run",
     "line vty 0 4",
     "login local",
     "transport input ssh",
@@ -50,6 +51,7 @@ config_cmds = [
     "interface Tunnel100",
     "description DMVPN SPOKE TUNNEL",
     "ip address {} 255.255.255.0".format(tun100_ip),
+    "cdp enable",
     "ip nhrp network-id 100",
     "ip nhrp nhs dynamic nbma connect.njrusmc.net multicast",
     "ip ospf network point-to-multipoint",

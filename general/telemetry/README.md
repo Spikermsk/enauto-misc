@@ -12,8 +12,7 @@ The `install_tig.sh` script clones the forked repository containing
 the relevant IOS-XE gRPC changes, starts the TIG stack, and prints
 the currently-open TCP ports for verification.
 
-From the router, test connectivity and reveal
-the IP address of the TIG server: `ping tig.njrusmc.net`
+From the router, test connectivity to 10.0.9.188
 
 Use the `make_trees.sh` script, which relies on `pyang`, to build
 
@@ -46,9 +45,9 @@ telemetry ietf subscription 101
  receiver ip address 10.0.19.188 42518 protocol grpc-tcp
 
 # Configure CDP neighbor details subscription (on-change)
-telemetry ietf subscription 103
+telemetry ietf subscription 102
  encoding encode-kvgpb
- filter xpath /cdp-ios-xe-oper:cdp-neighbor-details/cdp-neighbor-detail
+ filter xpath /cdp-ios-xe-oper:cdp-neighbor-details/cdp-neighbor-detail/device_name
  stream yang-push
  update-policy on-change
  receiver ip address 10.0.19.188 42518 protocol grpc-tcp
@@ -69,7 +68,7 @@ CSR1#show telemetry ietf subscription 100 receiver
 Telemetry subscription receivers detail:
 
   Subscription ID: 100
-  Address: 52.71.118.108
+  Address: 10.0.19.188
   Port: 42518
   Protocol: grpc-tcp
   Profile: 
@@ -78,7 +77,7 @@ Telemetry subscription receivers detail:
 ```
 
 Browse to Grafana using the default login credentials `admin/admin`
-`http://tig.njrusmc.net:3000`
+`http://192.168.2.188:3000`
 
 Select `create your first dashboard`
 
@@ -100,15 +99,14 @@ For on-change:
 Use a "table" visualization instead
 
 from default (click cdp metric) (can optionally filter on device-id)
-select multiple fields:
-  * `device_name`
-  * `ip_address`
-  * `local_intf_name`
-  * `port_id` + alias of `remote_intf_name`
-optionally group by LIMIT, but can leave blank
+select `device_name` using the `distinct` aggregator.
+
+group by time(5m), remove fill(null)
+
 format as table
 
 may need to refresh to see changes
+
 
 
 A good idea: when building a panel, click the gear (General) and give the

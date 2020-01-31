@@ -3,9 +3,10 @@ This legacy tool will likely not be used much in the future, but it is still
 powerful for basic NETCONF/YANG exploration.
 
 ## Installation
-Use this command to run the setup script:
+Use this command to run the setup script. You may need to run this command
+as `root` using `sudo`.
 
-`./yangexplorer/setup.sh`
+`./start_yangexplorer.sh`
 
 ## Basic exploration
 1. From main page, click "Login" using guest/guest

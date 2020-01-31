@@ -9,6 +9,7 @@
 5. Demo: Creating new Networks in a Private Meraki Deployment
 6. Demo: Associating Wireless Clients and Testing Internet Connectivity
 7. Module Summary
+  - build the helpers into a more robust SDK
 
 ## m3: Collecting Video Footage from Meraki MV Cameras (15m)
 1. Capabilities of the Meraki MV Cameras
@@ -17,14 +18,16 @@
 4. Demo: Adjusting Camera Quality and Retention Settings
 5. Demo: Collecting Camera Analytics using the MV Sense API
 6. Module Summary
+  - use the TIG stack to collect MV sense analytics and graph it
 
 ## m4: Designing and Deploying Wireless Captive Portals (25m)
 1. What is a Captive Portal?
 2. Demo: Configuring a Basic Meraki-hosted Captive Portal
 3. Demo: Testing the Basic Portal with a Real Client
-4. Demo: Building an External Captive Portal (Excap) using Meraki Examples
+4. Demo: Building a Simple External Captive Portal (Excap)
 5. Demo: Testing the Excap with a Real Client
 6. Module Summary
+  - customize portal or write your own in Flask
 
 ## m5: Implementing Location Scanning and Event-driven Alerts (25m)
 1. The Importance of Wireless Client Location Data
@@ -34,6 +37,4 @@
 5. Demo: Setting up Another HTTPS Receiver using postb.in
 6. Demo: Building and Testing Webhooks via Meraki API
 7. Course Summary and Homework Challenges
-  - build the helpers into a more robust SDK
-  - Build your own excap using flask or JS and tie it into meraki
-  - use the TIG stack to collect MV sense analytics and graph it
+  - use flask to build your own HTTPS receiver (consider SSL, mention DEVCOR)

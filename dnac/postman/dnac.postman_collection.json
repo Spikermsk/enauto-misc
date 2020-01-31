@@ -1062,6 +1062,111 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"response\": {\n        \"startTime\": 1579212521405,\n        \"endTime\": 1579212521600,\n        \"data\": \"c79f12c6-fcae-4c25-a567-c5aefedfec88\",\n        \"version\": 1579212521405,\n        \"progress\": \"Successfully created project with name postman_proj\",\n        \"rootId\": \"981d0e57-e42c-4f6c-a270-0d79e91644bb\",\n        \"serviceType\": \"NCTP\",\n        \"isError\": false,\n        \"username\": \"admin\",\n        \"instanceTenantId\": \"5be540a20700b3004c25ea95\",\n        \"id\": \"981d0e57-e42c-4f6c-a270-0d79e91644bb\"\n    },\n    \"version\": \"1.0\"\n}"
+						},
+						{
+							"name": "Versioned template",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Auth-Token",
+										"value": "{{api_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/task/8f707c71-16d1-4bdd-941f-c2f55fc79f1c",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"task",
+										"8f707c71-16d1-4bdd-941f-c2f55fc79f1c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2020 23:10:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=behijgtsns1q9jror2x8v6dd;Path=/; Secure; HttpOnly"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"progress\": \"Successfully versioned template to version 2\",\n        \"endTime\": 1580512200184,\n        \"startTime\": 1580512200166,\n        \"data\": \"2\",\n        \"version\": 1580512200166,\n        \"serviceType\": \"NCTP\",\n        \"isError\": false,\n        \"username\": \"nickrus\",\n        \"rootId\": \"8f707c71-16d1-4bdd-941f-c2f55fc79f1c\",\n        \"instanceTenantId\": \"5a8d14f0ae788e008ec14ecb\",\n        \"id\": \"8f707c71-16d1-4bdd-941f-c2f55fc79f1c\"\n    },\n    \"version\": \"1.0\"\n}"
 						}
 					]
 				},
@@ -4175,6 +4280,620 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"templateId\": \"ab759012-f4c4-4b4a-9510-e53621acd310\",\n    \"cliPreview\": \"no ntp logging\\nntp server 203.0.113.1\\nntp server 203.0.113.2\\n\",\n    \"deviceId\": null,\n    \"validationErrors\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Version (commit) template",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comments\": \"commit comments here\",\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/version",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"template-programmer",
+								"template",
+								"version"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure: bad body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comments\": \"commit comments here\",\n    \"unknown\": null,\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/version",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"version"
+									]
+								}
+							},
+							"status": "Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2020 23:13:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"errorCode\": \"UNEXPECTED_ERROR\",\n        \"message\": \"JSON parse error: Unrecognized field \\\"unknown\\\" (class com.cisco.apicem.template.programmer.service.dto.TemplateVersionRequestDTO), not marked as ignorable; nested exception is com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field \\\"unknown\\\" (class com.cisco.apicem.template.programmer.service.dto.TemplateVersionRequestDTO), not marked as ignorable (2 known properties: \\\"comments\\\", \\\"templateId\\\"])\\n at [Source: java.io.PushbackInputStream@5b28b54e; line: 5, column: 2] (through reference chain: com.cisco.apicem.template.programmer.service.dto.TemplateVersionRequestDTO[\\\"unknown\\\"])\",\n        \"detail\": \"An error occurred while invoking a REST API\",\n        \"href\": \"\"\n    },\n    \"version\": \"1.0\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comments\": \"commit comments here\",\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/version",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"version"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2020 23:10:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"taskId\": \"8f707c71-16d1-4bdd-941f-c2f55fc79f1c\",\n        \"url\": \"/api/v1/task/8f707c71-16d1-4bdd-941f-c2f55fc79f1c\"\n    },\n    \"version\": \"1.0\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deploy (apply) template",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Auth-Token",
+								"type": "text",
+								"value": "{{api_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"forcePushTemplate\": false,\n    \"targetInfo\": [\n        {\n            \"id\": \"100.118.1.69\",\n            \"params\": {\n                \"ftp_src\": \"Vlan99\",\n                \"ssh_ver\": 2\n            },\n            \"type\": \"MANAGED_DEVICE_IP\"\n        }\n    ],\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/deploy",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"template-programmer",
+								"template",
+								"deploy"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success; first deploy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"forcePushTemplate\": false,\n    \"targetInfo\": [\n        {\n            \"id\": \"100.118.1.69\",\n            \"params\": {\n                \"ftp_src\": \"Vlan99\",\n                \"ssh_ver\": 2\n            },\n            \"type\": \"MANAGED_DEVICE_IP\"\n        }\n    ],\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/deploy",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"deploy"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2020 23:11:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=leya37y2gufy12rxn2c3pfds7;Path=/; Secure; HttpOnly"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deploymentId\": \"Deployment of  Template: 317fabac-b5a2-458a-adf3-373b91c119bc.ApplicableTargets: [100.118.1.69]Template Deployemnt Id: d5a0b0f2-6b75-4ff0-8789-08e3c3017a08\",\n    \"startTime\": \"\",\n    \"endTime\": \"\",\n    \"duration\": \"0 seconds\"\n}"
+						},
+						{
+							"name": "Success: already deployed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"forcePushTemplate\": false,\n    \"targetInfo\": [\n        {\n            \"id\": \"100.118.1.69\",\n            \"params\": {\n                \"ftp_src\": \"Vlan99\",\n                \"ssh_ver\": 2\n            },\n            \"type\": \"MANAGED_DEVICE_IP\"\n        }\n    ],\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/deploy",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"deploy"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2020 23:11:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deploymentId\": \"Deployment of  Template: 317fabac-b5a2-458a-adf3-373b91c119bc.ApplicableTargets: [100.118.1.69],Template simple_temp:2 is already deployed with same params,. Not deploying it.None of the targets are applicable for the template. Hence not deploying\",\n    \"startTime\": \"\",\n    \"endTime\": \"\",\n    \"duration\": \"0 seconds\"\n}"
+						},
+						{
+							"name": "Failure: bad body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "X-Auth-Token",
+										"type": "text",
+										"value": "{{api_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"forcePushTemplate\": false,\n    \"targetInfo\": [\n        {\n            \"id\": \"100.118.1.69\",\n            \"unknown\": null,\n            \"params\": {\n                \"ftp_src\": \"Vlan99\",\n                \"ssh_ver\": 2\n            },\n            \"type\": \"MANAGED_DEVICE_IP\"\n        }\n    ],\n    \"templateId\": \"317fabac-b5a2-458a-adf3-373b91c119bc\"\n}"
+								},
+								"url": {
+									"raw": "https://{{dnac}}/dna/intent/api/v1/template-programmer/template/deploy",
+									"protocol": "https",
+									"host": [
+										"{{dnac}}"
+									],
+									"path": [
+										"dna",
+										"intent",
+										"api",
+										"v1",
+										"template-programmer",
+										"template",
+										"deploy"
+									]
+								}
+							},
+							"status": "Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2020 23:11:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Via",
+									"value": "api-gateway"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"errorCode\": \"UNEXPECTED_ERROR\",\n        \"message\": \"JSON parse error: Unrecognized field \\\"unknown\\\" (class com.cisco.apicem.template.programmer.service.dto.TargetInfo), not marked as ignorable; nested exception is com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field \\\"unknown\\\" (class com.cisco.apicem.template.programmer.service.dto.TargetInfo), not marked as ignorable (5 known properties: \\\"type\\\", \\\"id\\\", \\\"versionedTemplateId\\\", \\\"params\\\", \\\"hostName\\\"])\\n at [Source: java.io.PushbackInputStream@2f0a337f; line: 6, column: 28] (through reference chain: com.cisco.apicem.template.programmer.service.dto.TemplateDeploymentInfo[\\\"targetInfo\\\"]->java.util.ArrayList[0]->com.cisco.apicem.template.programmer.service.dto.TargetInfo[\\\"unknown\\\"])\",\n        \"detail\": \"An error occurred while invoking a REST API\",\n        \"href\": \"\"\n    },\n    \"version\": \"1.0\"\n}"
 						}
 					]
 				}

@@ -18,11 +18,19 @@ def main():
 
     # Create a DNARequester object with our sandbox parameters
     dnac = DNACRequester(
-        host="10.10.20.85", username="admin", password="Cisco1234!", verify=False
+        host="dnac.njrusmc.net",
+        username="nickrus",
+        password="Cisco123!",
+        verify=False,
+        old_style=True,
+        # host="10.10.20.85", username="admin", password="Cisco1234!", verify=False
     )
 
     # Build a new project using a name and description
-    proj_body = {"name": "globo_proj", "description": "testing some python scripts"}
+    proj_body = {
+        "name": "globo_proj",
+        "description": "testing some python scripts",
+    }
     proj_resp = dnac.req(
         f"dna/intent/api/v1/template-programmer/project",
         method="post",
@@ -55,7 +63,7 @@ def main():
         # Then, issue the HTTP PUT request to begin the previous without
         # raising an HTTPError if the status code >= 400
         prev_resp = dnac.req(
-            f"dna/intent/api/v1/template-programmer/template/preview",
+            "dna/intent/api/v1/template-programmer/template/preview",
             method="put",
             jsonbody=prev_body,
         )
@@ -75,6 +83,51 @@ def main():
         else:
             print(f"Snippet rendered:")
             print(prev_data["cliPreview"])
+
+            # Uncomment to apply the template on a test Cat9300 switch
+            version_and_deploy(dnac, temp_data, temp_id)
+
+
+def version_and_deploy(dnac, temp_data, temp_id, ip_addr="100.118.1.69"):
+    """
+    Helper function to version and deploy the templates as they are rendered.
+    This should only be called when the template renders successfully (ie,
+    without errors). This issues the "version" and "deploy" API calls to
+    a sample IP address specified.
+    """
+
+    # Version (commit) template. You must do this before trying to deploy
+    # the template
+    ver_body = {"comments": "initial commit via API", "templateId": temp_id}
+    ver_resp = dnac.req(
+        "dna/intent/api/v1/template-programmer/template/version",
+        method="post",
+        jsonbody=ver_body,
+    )
+    ver_task = dnac.wait_for_task(ver_resp.json()["response"]["taskId"])
+    print(f"Version status: {ver_task.json()['response']['progress']}")
+
+    # Deploy (apply) template. The body is similar to the preview body
+    # except we must specify targets to configure. This is a list of
+    # dictionaries, allowing for bulk deployment. To keep it simple,
+    # you can hardcode a single IP address or UUID into the "id" field
+    deploy_body = {
+        "forcePushTemplate": False,
+        "targetInfo": [
+            {
+                "id": ip_addr,
+                "params": temp_data["params"],
+                "type": "MANAGED_DEVICE_IP",
+            }
+        ],
+        "templateId": temp_id,
+    }
+    deploy_resp = dnac.req(
+        "dna/intent/api/v1/template-programmer/template/deploy",
+        method="post",
+        jsonbody=deploy_body,
+    )
+    print(f"Deploy status: {deploy_resp.json()['deploymentId']}")
 
 
 if __name__ == "__main__":

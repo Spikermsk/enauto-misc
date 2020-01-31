@@ -16,7 +16,7 @@
 2. Demo: Developing VTL Templates without DNA Center
 3. Demo: Writing a Python Script to Create and Render Templates
 4. Demo: Executing and Reviewing Template Creation and Rendering
-5. Demo: Deploying a Template to a Network Device
+5. Demo: Versioning and Deploying Templates to Network Devices
 6. Module Summary and Homework Challenge
   - Build your own templates for some feature at your job, like OSPF
 
